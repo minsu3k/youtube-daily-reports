@@ -5,14 +5,14 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>정가거부 혜택 2026-11-05</title>
 <style>
-:root{--bg:#14161a;--panel:#1c1f25;--card:#20242b;--line:#2e333c;--ink:#e8e9ec;--soft:#a3a8b3;--faint:#6f7684;--acc:#4fd1b5;--acc2:#f5b94a;--warn:#f08a6c}
+:root{--bg:#14161a;--panel:#1c1f25;--card:#20242b;--card2:#272c34;--line:#2e333c;--ink:#e8e9ec;--soft:#a3a8b3;--faint:#6f7684;--acc:#4fd1b5;--acc2:#f5b94a;--warn:#f08a6c;--accbg:#4fd1b518}
 *{box-sizing:border-box}
-body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.65 -apple-system,"Segoe UI","Noto Sans KR",sans-serif}
+body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.6 -apple-system,"Segoe UI","Noto Sans KR",sans-serif}
 a{color:var(--acc);text-decoration:none}
 header{padding:22px 20px 6px;max-width:1180px;margin:0 auto}
 header h1{margin:0;font-size:21px}
 header .sub{color:var(--soft);font-size:13px;margin-top:2px}
-.wrap{display:grid;grid-template-columns:260px 1fr;gap:18px;max-width:1180px;margin:0 auto;padding:14px 20px 30px;align-items:start}
+.wrap{display:grid;grid-template-columns:250px 1fr;gap:18px;max-width:1180px;margin:0 auto;padding:14px 20px 30px;align-items:start}
 .panel{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:14px;position:sticky;top:12px}
 .panel h3{margin:14px 0 6px;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--faint)}
 .panel h3:first-child{margin-top:0}
@@ -23,119 +23,136 @@ input[type=search]{width:100%;padding:8px 10px;border-radius:8px;border:1px soli
 label.chk{display:flex;gap:8px;align-items:center;font-size:14px;color:var(--soft);padding:2px 0;cursor:pointer}
 .main{min-width:0}
 .count{color:var(--soft);font-size:13px;margin:0 0 8px}
-.card{background:var(--card);border:1px solid var(--line);border-left:4px solid var(--acc);border-radius:10px;padding:14px 16px;margin-bottom:14px}
+.card{background:var(--card);border:1px solid var(--line);border-left:4px solid var(--acc);border-radius:12px;padding:16px 18px;margin-bottom:16px}
 .card.short{border-left-color:var(--acc2)}
-.tag{display:inline-block;font-size:11px;padding:1px 8px;border-radius:99px;background:var(--bg);color:var(--soft);margin-right:6px}
-.card h2{margin:4px 0 8px;font-size:16.5px;line-height:1.4}
-.sec{margin-top:10px}
-.sec .lb{font-size:11.5px;font-weight:700;letter-spacing:.04em;color:var(--acc);margin-bottom:3px}
-.sec.warn .lb{color:var(--warn)}
-.row{display:flex;gap:8px;padding:3px 0;border-bottom:1px dashed var(--line)}
-.row:last-child{border-bottom:0}
-.row input{margin-top:5px;accent-color:var(--acc);flex:none}
-.row span,.plain{color:var(--ink);overflow-wrap:anywhere}
-.src{font-size:11px;color:var(--faint);margin-left:4px}
+.tag{display:inline-block;font-size:11px;padding:1px 8px;border-radius:99px;background:var(--bg);color:var(--soft)}
+.card h2{margin:6px 0 10px;font-size:17px;line-height:1.4}
+.tldr{background:var(--accbg);border-radius:8px;padding:9px 12px;color:var(--ink);font-size:14.5px;margin-bottom:6px}
+.cat{display:flex;align-items:center;gap:8px;margin:16px 0 4px;font-size:13px;font-weight:700;color:var(--acc2)}
+.cat i{font-style:normal;font-weight:400;color:var(--faint);font-size:12px}
+.item{display:grid;grid-template-columns:auto 1fr auto;gap:2px 10px;padding:9px 4px;border-bottom:1px solid var(--line);align-items:start}
+.item:last-of-type{border-bottom:0}
+.item input{grid-row:1/3;margin-top:5px;accent-color:var(--acc)}
+.item .nm{font-weight:600;overflow-wrap:anywhere}
+.item .dl{grid-column:3;grid-row:1;text-align:right;font-weight:800;color:var(--acc);white-space:nowrap}
+.item .dt{grid-column:2/4;grid-row:2;font-size:13px;color:var(--soft);overflow-wrap:anywhere}
+.boxes{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:10px;margin-top:14px}
+.box{background:var(--card2);border-radius:10px;padding:10px 13px}
+.box .lb{font-size:11.5px;font-weight:800;letter-spacing:.05em;color:var(--acc);margin-bottom:4px}
+.box.warn .lb{color:var(--warn)}
+.box ul,.box ol{margin:0;padding-left:18px;color:var(--ink);font-size:13.5px}
+.box li{margin:2px 0;overflow-wrap:anywhere}
+.links{margin-top:14px;display:flex;flex-wrap:wrap;gap:6px}
+.pill{display:inline-flex;gap:6px;align-items:center;border:1px solid var(--line);background:var(--card2);border-radius:99px;padding:4px 11px;font-size:13px;color:var(--ink)}
+.pill:hover{border-color:var(--acc)}
+.pill small{color:var(--faint);font-size:11px}
+summary{cursor:pointer;font-weight:700;font-size:14px;list-style:none;display:none}
+@media(max-width:820px){summary{display:block}details[open]>summary{margin-bottom:6px}}
 mark{background:#f5b94a55;color:inherit;border-radius:3px}
-.more{background:none;border:0;color:var(--acc);cursor:pointer;padding:4px 0;font-size:13px}
+.more{background:none;border:0;color:var(--acc);cursor:pointer;padding:6px 0;font-size:13px}
 .out{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:14px;margin:0 20px 40px;max-width:1140px}
 @media(min-width:1220px){.out{margin:0 auto 40px}}
 .out h3{margin:0 0 8px;font-size:13px;color:var(--soft)}
 textarea{width:100%;min-height:120px;background:var(--bg);color:var(--ink);border:1px solid var(--line);border-radius:8px;padding:10px;font:13px/1.6 ui-monospace,Consolas,monospace;resize:vertical}
 button.copy{margin-top:8px;background:var(--acc);color:#0c1a17;border:0;border-radius:8px;padding:8px 16px;font-weight:700;cursor:pointer}
 .empty{color:var(--faint);padding:30px 0;text-align:center}
-@media(max-width:820px){.wrap{grid-template-columns:1fr;padding:10px 14px}.panel{position:static}header{padding:18px 14px 0}.out{margin:0 14px 30px}}
+@media(max-width:820px){.wrap{grid-template-columns:1fr;padding:10px 14px}.panel{position:static}header{padding:18px 14px 0}.out{margin:0 14px 30px}.item{grid-template-columns:auto 1fr}.item .dl{grid-column:2;grid-row:2;text-align:left}.item .dt{grid-column:2;grid-row:3}.item input{grid-row:1/4}}
 </style>
 </head>
 <body>
 <header><h1>🎁 정가거부 혜택 리포트</h1><div class="sub">2026-11-05 · 신규 <b id="total"></b>개 · 영상 화면 + 자막을 함께 분석</div></header>
 <div class="wrap">
-  <aside class="panel">
-    <h3>프리셋</h3>
-    <div class="chips" id="presets"></div>
+  <aside class="panel"><details id="pd" open><summary>⚙ 필터·보기 설정</summary>
+    <h3>프리셋</h3><div class="chips" id="presets"></div>
     <h3>종류</h3><div class="chips" id="kinds"></div>
     <h3>검색</h3><input type="search" id="q" placeholder="업체·상품·키워드">
     <h3>표시할 항목</h3><div id="secs"></div>
-    <h3>혜택 줄 수</h3>
-    <div class="chips" id="limits"></div>
-  </aside>
+    <h3>혜택 개수</h3><div class="chips" id="limits"></div>
+  </details></aside>
   <main class="main"><p class="count" id="count"></p><div id="cards"></div></main>
 </div>
 <section class="out"><h3>✅ 체크한 혜택 모아보기 (카드 안 체크박스를 눌러 담기)</h3>
   <textarea id="out" readonly></textarea><button class="copy" id="copy">복사</button></section>
 <script>
-const DATA = [{"kind": "영상", "title": "2026년 11월 알뜰폰 요금제 총정리｜이번에 졸업 가능하겠는데요?", "url": "https://www.youtube.com/watch?v=DQncZimMtrY", "sections": [{"label": "혜택", "lines": ["• **저가 요금제 (12개월 이하 한정)**", "• A모바일(KT망): 통화 200분·문자 100건, 데이터 제공, 1년간 월 10원", "• 아이즈모바일(SKT망): 6GB·통화 200분·문자 100건, 18개월간 월 10원", "• 아이즈모바일 6GB(300분, 이후 8,000원)·7GB(200분, 이후 17,700원): 12개월 10원. 화면 표기는 \"12개월 10원 2종\"입니다.", "• 프리티(KT망): 10GB·통화 무제한·문자 300건, 10개월간 월 10원", "• 알닷: 데이터를 다 쓰면 1Mbps로 무제한, 통화·문자 무제한, 1년간 월 990원. 통화·문자는 완전 무제한이 아니라고 안내합니다.", "• **평생 요금제**", "• 아이즈모바일(알닷): 6GB·통화 200분·문자 100건, 평생 월 990원. 5GB·통화 100분·문자 50건 월 880원짜리도 있으나 990원 요금제가 더 낫다고 평가합니다.", "• 핀다이렉트(SKT망): 10GB·통화 500분·문자 200건, 평생 월 2,200원", "• 조이모바일(SKT망): 통화 무제한·문자 100건, 평생 월 2,310원. 폴더폰·어르신 폰용으로 추천합니다.", "• 프리티(KT망): 15GB·통화 200분·문자 100건, 평생 월 3,300원. 가성비가 좋다고 평가합니다. 20GB·통화 200분·문자 100건은 평생 월 6,490원입니다.", "• KG모바일(알닷): 4.5GB+1Mbps(통화 200분·문자 100건)와 5GB+1Mbps(통화 100분·문자 100건). 둘 다 평생 월 3,700원입니다.", "• 이번 달은 20GB 이하 요금제만 보는 것이 낫다고 합니다.", "• **데이터 무제한 요금제**(통화·문자는 모두 무제한)", "• A모바일 A스페셜 11GB+(LG망): 11GB+매일 2GB+3Mbps, 7개월간 월 4,500원, 이후 36,300원", "• 아이즈모바일 [K]롯시&밀리 11GB+(KT망): 11GB+매일 2GB+3Mbps, 7개월간 월 8,900원, 이후 48,400원. 매달 롯데시네마 관람권(정가 15,000원), 밀리의서재 무료(정가 11,900원)가 제공돼 체감가는 돈을 받고 쓰는 수준이라고 합니다. 화면상 \"월 최대 26,900원 혜택\"이고 SOLO 결합 시 20GB를 추가로 줍니다. CU 20% 할인형(CU&롯시)도 있습니다.", "• 핀다이렉트 [K]핀다이렉트Z 100GB+(KT망, 네이버페이): 100GB+5Mbps, 월 납부액 39,000원. 네이버페이 매달 3만 원(7개월)과 5천 원(평생)을 주며, 화면상 페이백 포함 월 4,000원(7개월)입니다. 8개월째부터는 48,400원(페이백 포함 43,400원)입니다.", "• A모바일 100GB+(LG망): 100GB+5Mbps, 7개월간 월 6,600원, 이후 46,200원. 매일 5GB+5Mbps 요금제도 월 6,600원(이후 49,500원)이며 데이터 제공 방식만 고르면 됩니다.", "• 아이즈모바일 [K]롯시&밀리 100GB+(KT망): 100GB+5Mbps, 7개월간 월 9,900원(이후 55,000원). 롯데시네마 관람권과 밀리의서재 무료 혜택이 있고, 체감가는 돈을 받고 쓰는 수준이라고 합니다.", "• 카카오페이 요금 49(KT망): 120GB+5Mbps, 6개월간 월 49,000원. 6개월간 카카오페이 포인트 44,000P를 주므로 체감가는 월 5,000원입니다. 티빙 광고형 24개월 무료, 밀리의서재·지니뮤직 24개월 50% 할인이 붙고, KT VIP 초이스도 받을 수 있습니다.", "• 우리WON모바일 청년드림 5G 125GB+(LG망): 125GB+5Mbps. 기본료 38,900원에서 프로모션 할인 후 34,500원이 되고, 꿀머니 지급과 쿠폰으로 6개월간 최종 0원입니다. 71GB, 100GB 등 다른 요금제도 6개월간 체감가 0원이라고 합니다. 화면상 개통 혜택은 Npay 포인트 3만 원, 치킨세트 쿠폰 등이고, 가입 상품 혜택으로 돈을 받고 쓴다고도 말할 수 있다고 합니다. 이후 요금은 영상에 나오지 않습니다.", "• 티플러스 5G 티플 180GB+(LG망): 180GB+10Mbps, 평생 월 28,000원. 화면상 알닷 최대 혜택은 81,550원입니다. 11월 6일에 가격이 오릅니다.", "• 이번 달 알닷의 아이즈모바일 23,900원 평생 요금제는 조기 종료됐습니다.", "• **추가 혜택**", "• 정가거부 네이버 카페의 정가거부 링크로 개통하면 6,000원을 추가로 받습니다. 영상 제작자는 대가를 받지 않는다고 밝힙니다.", "• 같은 요금제라도 개통처에 따라 사은품이 다릅니다. KT망 마이알뜰폰이나 바로유심은 사은품 2만 원, LG U+망 알닷은 커피 쿠폰 등 추가 사은품이 있습니다."]}, {"label": "대상", "lines": ["• 알뜰폰을 새로 개통하려는 사람 전반", "• 우리WON모바일은 우리은행 이용자에게 유리하다고 합니다. 청년드림 요금제는 청년 대상으로 보이나, 영상에 연령 기준은 없습니다.", "• 카카오페이 요금제는 아이폰이 아닌 기기용입니다(자막: \"아이폰이 아니기 때문에 KT VIP 초이스도 가져갈 수 있다\")."]}, {"label": "신청방법·기간", "lines": ["• 개통처는 망별로 다릅니다. LG U+망은 알닷, KT망은 마이알뜰폰(공용유심은 바로유심), SKT망은 간편유심(이마트24 등에서 구매)입니다.", "• 물리 유심은 구매·배송 후 폰에 끼워 개통합니다. eSIM은 온라인 신청 후 QR로 다운로드해 개통하며 배송이 필요 없습니다.", "• 요금제가 하루 만에 사라질 수 있습니다. 좋은 요금제는 미리 개통 신청하거나, 편의점에서 유심을 사서 바로 개통하는 방법이 있습니다.", "• 우리WON모바일은 이벤트에 꼭 응모하고 개통해야 합니다.", "• 이번 달 영상 기준(2026년 11월)이며, 요금제는 수시로 바뀌거나 종료됩니다. 개통 전에 더 좋은 요금제가 있는지 다시 확인하라고 합니다.", "• 가격 인상일은 11월 6일(티플러스)입니다."]}, {"label": "유의사항", "lines": ["• 저가·무제한 요금제는 프로모션 기간(7개월 등)이 끝나면 요금이 크게 오릅니다. 화면 표의 이후 요금은 36,300원~55,000원이며, 적용 시작은 2027년 6월입니다.", "• 네이버페이는 개통 다음 달 말일부터 지급됩니다. 마지막 달에는 받지 못하므로 월초보다 월말 개통이 조금 더 유리할 수 있습니다.", "• 카카오페이 포인트는 개통 다음 달이 아니라 그다음 달부터 들어옵니다. 6개월 차 요금은 포인트로 돌려받지 못하므로 정확히 월 5,000원은 아닙니다.", "• 우리WON모바일 꿀머니는 다다음 달부터 지급되므로 월말 가입이 더 유리합니다.", "• eSIM은 폰이 지원해야 합니다(전화 앱에서 *#06# 입력 후 EID가 보이면 지원). 일부 요금제·통신사는 eSIM을 지원하지 않으며, 발급비는 2,750원입니다. 다운로드는 Wi-Fi 환경에서 하는 것이 안전합니다.", "• 화면 표시 기준으로 일부 사은품은 바로유심으로 개통할 때만 받을 수 있습니다.", "• 영상 하단 면책 문구는 다음과 같습니다. 이벤트는 제작자의 참여 권유가 아니며 참여는 개인 판단입니다. 제작자와 무관하고 변경되거나 종료될 수 있습니다. 정정·보충 사항은 커뮤니티 게시판이나 고정 댓글로 안내합니다."]}], "links": [{"label": "정가거부 네이버 카페", "url": "https://cafe.naver.com/wjdrkrjqn", "src": "설명"}, {"label": "오늘의핫딜", "url": "https://influencers.coupang.com/s/wjdrkrjqn", "src": "설명"}, {"label": "정가거부 유튜브 채널 멤버십을 오픈하였습니다.", "url": "https://www.youtube.com/channel/UC1KHW0JH7zToxC2H69axgzw/join", "src": "설명"}, {"label": "친구추천 코드", "url": "https://cafe.naver.com/wjdrkrjqn/172521", "src": "고정댓글"}]}, {"kind": "영상", "title": "26년 11월 카드 발급 캐시백 이벤트 총정리 / 카통법 진짜에요?", "url": "https://www.youtube.com/watch?v=AT5LwUQBOsg", "sections": [{"label": "혜택", "lines": ["• 삼성카드: 30만 원 이상 결제 시 22만 원 캐시백. VISA로 발급하면 신세계·이마트 모바일 상품권 3만 원을 추가로 줍니다(화면: VISA 상품권 3만 원 별도, VISA 이용 12/31까지).", "• 현대카드: 30만 원 이상 이용 시 23만 원 캐시백(12/31까지). 비자 카드로 발급하고 앱카드까지 등록해야 합니다. 화면 프레임에는 나오지 않고 자막으로만 확인된 내용입니다.", "• BC 바로카드(케이뱅크 히든카드): 25만 원 이상 이용 시 23만 원 청구할인(12/31까지). 리볼빙을 신청하면 1.5만 원을 더 줍니다. 청구할인은 요청하면 계좌로 입금해 줍니다.", "• IBK기업은행(뱅크샐러드): 20만 원 사용 시 12만 원 청구할인. 결제계좌를 기업은행으로 하면 1만 원을 더 줘서 합계 12+1만 원입니다. 20만 원 중 간편결제가 1만 원 이상 있어야 합니다.", "• NH농협카드(아정당): 16만 원 이상 이용 시 15만 원 캐시백. 12/1~12/10에 5만 원 이상 쓰면 1만 원 추가인데, 이때 NH페이 결제가 1원 이상 있어야 합니다. 마케팅 동의 시 5천 원이 추가되어 최대 16.5만 원입니다.", "• KB국민카드(카카오페이): 25만 원 이상 이용 시 19만 원 캐시백(12/15까지). 이 중 KB Pay 이용이 1만 원 이상 필요합니다. 마케팅·카드론 동의 시 3만 원이 추가되어 19+3만 원입니다.", "• 롯데카드(카카오페이): 30만 원 이상 이용 시 최대 21만 원 캐시백(12/10까지). AMEX 카드로 발급해야 21만 원이고, MASTER·VISA·국내전용은 15만 원입니다. 리볼빙을 신청하면 1만 원을 더 줍니다.", "• 신한카드(카카오페이): 28만 원 이상 이용 시 22만 원 캐시백(12/31까지). 정기결제·해외 이용 혜택은 별도입니다.", "• 신한카드(네이버페이): 25만 원 이용 시 19만 네이버포인트를 줍니다. 비자로 발급하면 3만 원 네이버포인트가 추가되어 합계 22만 원입니다. 이 항목은 자막으로만 확인되고 프레임에는 나오지 않습니다. 나머지 유의사항은 카카오페이 신한카드와 같습니다. 카카오페이는 28만 원 쓰고 22만 원 현금, 네이버페이는 25만 원 쓰고 22만 원 네이버포인트이므로 둘 중 하나를 고르면 됩니다.", "• 하나카드(카카오페이): 35만 원 이상 할부 결제 시 15만 원 현금 캐시백에 카카오페이 5만 원 쿠폰을 줍니다. 35만 원 쓰고 20만 원 상당을 받는 구조입니다. 리볼빙을 신청하면 1만 원을 더 줍니다. 화면상 지급은 2027.1.30 이내입니다.", "• 국민 체크카드(페이코): 신규 발급 후 12/10까지 45,000원 이상 이용 시 페이코 포인트 45,000P를 줍니다. 페이코 포인트는 수수료를 내면 현금 출금이 가능합니다. 이 항목은 자막으로만 확인됩니다.", "• 신한 체크카드(페이코): 신규 발급 시 10,000P(11/30까지 발급), 12/10까지 1만 원 이상 이용 시 5,000P, 교통카드 이용 시 5,000P를 줍니다. 최대 2만 P입니다.", "• 우리카드는 이번 달 이벤트가 없습니다."]}, {"label": "대상", "lines": ["• 삼성카드: 최근 6개월(2026.5.1~10.31) 삼성 개인신용카드 결제·탈회 이력이 없는 사람. 2022.1부터 삼성카드 다른 행사 혜택(캐시백·포인트·마일리지 등)을 받은 적이 없어야 합니다.", "• 현대카드: 1년 이내 혜택을 받은 적이 없는 사람.", "• BC 바로카드: 케이뱅크 계좌가 있어야 발급할 수 있습니다. 본인·가족 BC바로 신용카드 결제·탈회 이력이 최근 6개월 없어야 하고, 2021년 이후 혜택을 받은 적이 없어야 합니다.", "• 기업은행: 직전 2년 내 혜택을 받은 적이 없는 사람.", "• 농협: 2023.4.1 이후 혜택을 받은 적이 없는 사람. 직전 6개월(2026.5.1~10.31) 농협 신용카드 결제 이력이 없어야 합니다.", "• 국민카드: 직전 1년간 혜택을 받은 적이 없는 사람.", "• 롯데카드: 1년 내 롯데카드 혜택을 받은 적이 없는 사람.", "• 신한카드: 2022년부터 신한카드 혜택을 받은 적이 없는 사람. 직전 6개월 신한 개인신용카드 이용·탈회 이력이 없어야 합니다.", "• 하나카드: 2024.1 이후 혜택을 받은 적이 없는 사람. 직전 6개월(2026.5.1~10.31) 하나카드 결제 이력이 없어야 합니다.", "• 신한 체크카드: 신규 발급자(과거 보유 후 유효기간이 끝난 경우 포함). 신용·법인·BC·선불·기프트·가족카드는 제외됩니다."]}, {"label": "신청방법·기간", "lines": ["• 이벤트 응모 후 카드를 발급하고 조건 금액을 이용합니다. 응모 기간은 대부분 11/1~11/30이며, 이용 기간은 카드사별로 다릅니다.", "• 이용 마감: 삼성·BC·IBK·신한·하나·현대는 12/31, 국민은 12/15, 롯데는 12/10입니다. 농협은 자막에서는 \"12/30까지\"라고 했지만, 화면은 응모 마감 11/30으로 안내합니다(자막과 화면이 다름).", "• 경로: 삼성(삼성카드 검색), 현대(현대카드 검색), BC(카드고릴라), IBK(뱅크샐러드), 농협(아정당), 국민·롯데·신한·하나(카카오페이 카드연구소), 신한 네이버 이벤트(네이버페이), 국민·신한 체크(페이코 앱)로 응모합니다.", "• 이벤트 신청 후에는 카드사 고객센터에 전화해 응모와 참여 대상 여부를 꼭 확인하세요.", "• 신용카드 이벤트 진행 방법은 채널의 별도 영상을 참고하세요."]}, {"label": "유의사항", "lines": ["• 카드마다 혜택 수령 후 1년(삼성·하나 등은 12개월) 안에 해지·탈회하면 받은 혜택을 환수합니다. 신한도 수령 후 12개월 이내 탈회 시 환수합니다.", "• 하나카드는 간편결제로 할부 결제를 해야 하며, 일시불은 조건 미충족입니다. 지정 간편결제는 하나·카카오페이·네이버페이·토스페이·당근페이 등입니다. 지급은 2027.1.30 이내입니다.", "• 이벤트마다 간편결제, 마케팅 동의, 앱 설치·로그인, 혜택 지급일까지 회원 유지 등이 필요합니다. 하단의 세부 유의사항을 반드시 확인하세요.", "• 케이뱅크 계좌가 없으면 BC 바로카드를 발급할 수 없으니, 계좌가 없다면 이번 달은 쉬는 것도 방법입니다.", "• 국민 체크카드는 발급할 때 놀이터나 소시미 같은 카드를 고르는 편이 유리합니다.", "• 이벤트는 변경·종료될 수 있고, 참여 판단과 책임은 본인에게 있습니다. 영상 제작자의 참여 권유가 아닙니다."]}], "links": [{"label": "정가거부 네이버 카페", "url": "https://cafe.naver.com/wjdrkrjqn", "src": "설명"}, {"label": "오늘의핫딜", "url": "https://influencers.coupang.com/s/wjdrkrjqn", "src": "설명"}, {"label": "정가거부 유튜브 채널 멤버십을 오픈하였습니다.", "url": "https://www.youtube.com/channel/UC1KHW0JH7zToxC2H69axgzw/join", "src": "설명"}, {"label": "카카오페이", "url": "https://card-hub.kakaopay.com/", "src": "고정댓글"}, {"label": "네이버", "url": "https://card.pay.naver.com/home/promotion/event?from=pc_financetab", "src": "고정댓글"}, {"label": "삼성카드", "url": "https://www.samsungcard-ad.com/iDSELECTUP_monimotwin/?site=QAMBPCM47&cmpid=QAMBPCM47&n_media=27758&n_query=%EC%82%BC%EC%84%B1%EC%B9%B4%EB%93%9C&n_rank=1&n_ad_group=grp-a001-04-000000073243482&n_ad=nad-a001-04-000000605170698&n_keyword_id=nkw-a001-04-000008599463197&n_keyword=%EC%82%BC%EC%84%B1%EC%B9%B4%EB%93%9C&n_campaign_type=4&n_contract=tct-a001-04-000000001350106&n_ad_group_type=5&NaPm=ct%3Dmvzg5fnn%7Cci%3DERb447dd50-d6d6-11f1-9614-8ea523dbd161%7Ctr%3Dbrnd%7Chk%3D4fe305add8500ac23f2a6fd6e7a7b9b0184c23f0%7Cnacn%3DjCVlB0QxIP4y", "src": "고정댓글"}]}];
-const SECS = ["혜택","대상","신청방법·기간","유의사항","관련 링크"];
-const DEF = {kind:"전체", q:"", secs:new Set(SECS), limit:6};
+const DATA = [{"kind": "영상", "title": "2026년 11월 알뜰폰 요금제 총정리｜이번에 졸업 가능하겠는데요?", "url": "https://www.youtube.com/watch?v=DQncZimMtrY", "links": [{"label": "정가거부 네이버 카페", "url": "https://cafe.naver.com/wjdrkrjqn", "src": "설명"}, {"label": "오늘의핫딜", "url": "https://influencers.coupang.com/s/wjdrkrjqn", "src": "설명"}, {"label": "정가거부 유튜브 채널 멤버십을 오픈하였습니다.", "url": "https://www.youtube.com/channel/UC1KHW0JH7zToxC2H69axgzw/join", "src": "설명"}, {"label": "친구추천 코드", "url": "https://cafe.naver.com/wjdrkrjqn/172521", "src": "고정댓글"}], "tldr": "2026년 11월 알뜰폰 저가·평생·데이터 무제한 요금제와 개통 팁 정리", "groups": [{"category": "저가 요금제(한시 할인)", "items": [{"name": "A모바일(KT망)", "deal": "1년간 월 10원", "detail": "통화 200분·문자 100건. 데이터량은 자막 불명확"}, {"name": "아이즈모바일 6GB", "deal": "18개월간 월 10원", "detail": "SKT망, 통화 200분·문자 100건"}, {"name": "아이즈모바일 6GB·7GB", "deal": "12개월 10원 2종", "detail": "화면: 6GB 300분 이후 8,000원, 7GB 200분 이후 17,700원"}, {"name": "프리티(KT망) 10GB", "deal": "10개월간 월 10원", "detail": "통화 무제한·문자 300건"}, {"name": "알뜰 1Mbps 무제한", "deal": "1년간 월 990원", "detail": "데이터 약 5GB 후 1Mbps. 통화·문자는 무제한이 아님"}]}, {"category": "평생 요금제", "items": [{"name": "아이즈모바일 6GB", "deal": "평생 월 990원", "detail": "통화 200분·문자 100건. 880원(5GB·100분) 상품도 있음"}, {"name": "핀다이렉트 10GB", "deal": "평생 월 2,200원", "detail": "SKT망, 통화 500분·문자 200건"}, {"name": "조이통신 통화 무제한", "deal": "평생 월 2,310원", "detail": "SKT망, 문자 100건. 폴더폰·어르신폰용"}, {"name": "프리티 15GB", "deal": "평생 월 3,300원", "detail": "KT망, 통화 200분·문자 100건. 가성비 좋다고 평가"}, {"name": "KG모바일 4.5GB·5GB", "deal": "평생 월 3,700원", "detail": "다 쓰면 1Mbps. 통화 200분·100분, 문자 100건"}, {"name": "프리티 20GB", "deal": "평생 월 6,490원", "detail": "KT망, 통화 200분·문자 100건"}]}, {"category": "데이터 무제한(7개월 할인)", "items": [{"name": "A모바일 A스페셜 11GB+", "deal": "7개월 월 4,500원", "detail": "LG망. 11GB+매일 2GB+3Mbps. 이후 36,300원"}, {"name": "아이즈모바일 11GB(롯시&밀리)", "deal": "7개월 월 8,900원", "detail": "KT망. 롯데시네마 관람권 월 1장·밀리의서재 무료. 이후 48,400원"}, {"name": "핀다이렉트Z 100GB+", "deal": "월 39,000원, 실질 월 4,000원", "detail": "KT망. 네이버페이 매달 3만 원(7개월)·5천 원(평생). 이후 48,400원"}, {"name": "A모바일 100GB+·매일 5GB", "deal": "7개월 월 6,600원", "detail": "LG망. 5Mbps. 이후 46,200원·49,500원"}, {"name": "아이즈모바일 100GB+", "deal": "7개월 월 9,900원", "detail": "KT망. 롯데시네마·밀리 혜택. 이후 55,000원. CU 20% 할인형도 있음"}]}, {"category": "데이터 무제한(장기·특가)", "items": [{"name": "카카오페이 요금 49(KT망)", "deal": "6개월 월 49,000원, 실질 5,000원", "detail": "120GB+5Mbps. 카카오페이 포인트 44,000P. 티빙 광고형 24개월"}, {"name": "우리WON모바일(LG망) 125GB", "deal": "6개월 체감가 0원", "detail": "기본료 38,900원, 최대할인 34,500원. 꿀머니 지급·이벤트 응모 필수"}, {"name": "티플러스(LG망) 180GB", "deal": "평생 월 28,000원", "detail": "10Mbps, 5G. 11/6 판매가 변경(인상) 예고"}]}], "target": ["알뜰폰 신규 개통자·번호이동 고려자", "데이터 거의 안 쓰는 서브폰·폴더폰·어르신폰 사용자", "월 3만 원 안쪽 대용량 무제한을 원하는 사람", "우리은행 이용자(우리WON모바일)"], "how": ["망별 개통처 선택: LG는 알뜰, KT는 마이알뜰폰(공용유심 바로유심), SKT는 간편유심(이마트24 구매)", "정가거부 네이버 카페의 알뜰 링크로 개통하면 추가 6,000원", "유심 배송 대기 중 요금제가 사라질 수 있어 사전 신청이나 편의점 유심 구매 권장", "물리 유심 대신 eSIM 개통도 가능(온라인 신청, QR 다운로드, 개통)", "우리WON모바일은 이벤트 응모 후 개통", "월말 개통이 유리한 요금제(네이버페이·꿀머니)는 말일 기준으로 비교"], "caution": ["요금제는 하루 만에 사라지거나 생길 수 있음", "할인 종료 후 요금 크게 상승(무제한은 대부분 이후 3만~5만 원대, 2027년 6월부터)", "네이버페이는 개통 다음 달 말일부터 지급, 마지막 달은 못 받음", "카카오페이 포인트는 다다음 달부터 지급, 실질 월 5,000원은 아님", "우리WON 꿀머니도 다다음 달부터 지급, 월초 가입 불리", "eSIM은 폰 지원 여부(*#06# EID 확인)와 요금제·통신사 지원 확인 필요, 발급비 2,750원", "바로유심 개통 시 사은품 조건 확인", "티플러스 180GB 28,000원은 11월 6일 가격 인상 예정", "아이즈모바일 23,900원 요금제는 조기 종료됨", "영상 이벤트는 제작자 권유가 아니며 변경·종료될 수 있음, 판단은 본인 책임", "자막은 아이즈·A모바일을 '이야기'로 잘못 옮긴 곳이 있어 화면 수치를 우선 확인"]}, {"kind": "영상", "title": "26년 11월 카드 발급 캐시백 이벤트 총정리 / 카통법 진짜에요?", "url": "https://www.youtube.com/watch?v=AT5LwUQBOsg", "links": [{"label": "정가거부 네이버 카페", "url": "https://cafe.naver.com/wjdrkrjqn", "src": "설명"}, {"label": "오늘의핫딜", "url": "https://influencers.coupang.com/s/wjdrkrjqn", "src": "설명"}, {"label": "정가거부 유튜브 채널 멤버십을 오픈하였습니다.", "url": "https://www.youtube.com/channel/UC1KHW0JH7zToxC2H69axgzw/join", "src": "설명"}, {"label": "카카오페이", "url": "https://card-hub.kakaopay.com/", "src": "고정댓글"}, {"label": "네이버", "url": "https://card.pay.naver.com/home/promotion/event?from=pc_financetab", "src": "고정댓글"}, {"label": "삼성카드", "url": "https://www.samsungcard-ad.com/iDSELECTUP_monimotwin/?site=QAMBPCM47&cmpid=QAMBPCM47&n_media=27758&n_query=%EC%82%BC%EC%84%B1%EC%B9%B4%EB%93%9C&n_rank=1&n_ad_group=grp-a001-04-000000073243482&n_ad=nad-a001-04-000000605170698&n_keyword_id=nkw-a001-04-000008599463197&n_keyword=%EC%82%BC%EC%84%B1%EC%B9%B4%EB%93%9C&n_campaign_type=4&n_contract=tct-a001-04-000000001350106&n_ad_group_type=5&NaPm=ct%3Dmvzg5fnn%7Cci%3DERb447dd50-d6d6-11f1-9614-8ea523dbd161%7Ctr%3Dbrnd%7Chk%3D4fe305add8500ac23f2a6fd6e7a7b9b0184c23f0%7Cnacn%3DjCVlB0QxIP4y", "src": "고정댓글"}], "tldr": "2026년 11월 카드 발급 캐시백: 신용 11종 15~23만원대, 체크 2종 2~4.5만원", "groups": [{"category": "신용카드 (카드사 직접)", "items": [{"name": "삼성카드", "deal": "22만원 + 상품권 3만원", "detail": "30만원 이상 결제. 이용 12/31, 화면은 VISA 상품권 3만원 별도"}, {"name": "현대카드", "deal": "23만원 캐시백", "detail": "VISA 발급·앱카드 등록, 30만원 이상 이용(12/31)"}, {"name": "BC 바로카드", "deal": "23만원 청구할인", "detail": "25만원 이상, 12/31까지. 리볼빙 시 +1.5만원. 케이뱅크 계좌 필요"}, {"name": "IBK기업은행(뱅크샐러드)", "deal": "12만원 + 계좌 1만원", "detail": "20만원 사용(간편결제 1만원 포함), 12/31까지"}, {"name": "NH농협카드(아정당)", "deal": "15만원 + 추가 1.5만원", "detail": "16만원 이상. 추가 1만원(NH페이)+마케팅동의 5천원"}]}, {"category": "신용카드 (카카오페이·네이버페이 경유)", "items": [{"name": "KB국민카드", "deal": "19만원 + 동의 시 3만원", "detail": "25만원 이상, KB Pay 1만원 포함. 이용 12/15까지"}, {"name": "롯데카드", "deal": "21만원 캐시백", "detail": "30만원 이상, 12/10까지. 아멕스만 21만원, 리볼빙 +1만원"}, {"name": "신한카드(카카오페이)", "deal": "22만원 캐시백", "detail": "28만원 이상, 12/31까지"}, {"name": "신한카드(네이버페이)", "deal": "19만 + VISA 3만 포인트", "detail": "25만원 이상 시 네이버포인트 22만원, 12/31까지. 영상 확인 권장"}, {"name": "하나카드", "deal": "15만원 + 5만원 쿠폰", "detail": "35만원 이상 간편결제 할부(일시불 불가). 리볼빙 +1만원"}]}, {"category": "체크카드 (페이코)", "items": [{"name": "KB국민 체크", "deal": "4.5만 포인트", "detail": "신규 발급 후 4.5만원 이상 이용, 12/10까지"}, {"name": "신한 체크", "deal": "최대 2만 포인트", "detail": "발급 1만P+이용 5천P+교통 5천P. 발급 마감 화면 11/30, 자막 12/30"}]}], "target": ["신용카드 캐시백 이벤트 참여하려는 분", "최근 6개월~2년 내 해당 카드 혜택 이력이 없는 분", "케이뱅크 계좌 보유자(BC 바로카드)", "체크카드 신규 발급 가능한 분(국민·신한)"], "how": ["이벤트 페이지에서 응모 (대부분 11/1~11/30)", "카드 발급, 비자·아멕스 등 조건 브랜드 확인", "기한 내 최소 이용금액 결제 (12/10~12/31)", "마케팅 동의·리볼빙·간편결제 등 추가 조건 충족", "응모 후 카드사 고객센터에 참여 여부 확인"], "caution": ["이번 달 우리카드 이벤트 없음", "혜택 받고 1년 이내 탈회·해지 시 환수 (삼성 12개월, 신한 12개월)", "카드사별 과거 혜택 이력(6개월~2년)이 있으면 참여 불가", "농협은 응모 마감 11/30, 발급 기한은 자막 12/30으로 불일치", "하나카드는 일시불 불가, 간편결제 할부만 인정", "BC 청구할인은 요청 시 계좌 입금", "페이코 포인트는 수수료 내고 현금 출금 가능", "이벤트는 변경·종료될 수 있음"]}];
+const SECS = ["한줄요약","혜택","대상","신청방법","유의사항","관련 링크"];
 const PRESETS = {
-  "기본": {secs:SECS, limit:6},
-  "혜택만 빠르게": {secs:["혜택"], limit:4},
+  "기본": {secs:SECS, limit:8},
+  "혜택만 빠르게": {secs:["한줄요약","혜택"], limit:5},
   "전부 자세히": {secs:SECS, limit:99},
-  "신청방법 위주": {secs:["신청방법·기간","유의사항","관련 링크"], limit:99}
+  "신청방법 위주": {secs:["신청방법","유의사항","관련 링크"], limit:99}
 };
-const st = {kind:DEF.kind, q:DEF.q, secs:new Set(DEF.secs), limit:DEF.limit, checked:new Set(), expanded:new Set()};
+const st = {kind:"전체", q:"", secs:new Set(PRESETS["기본"].secs), limit:8, checked:new Set(), expanded:new Set()};
 const $ = id => document.getElementById(id);
-const esc = s => s.replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
-const hl = s => { let t = esc(s); if(st.q){ const r = new RegExp("("+st.q.replace(/[.*+?^${}()|[\]\\]/g,"\\$&")+")","gi"); t = t.replace(r,"<mark>$1</mark>"); } return t; };
+const esc = s => String(s).replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const hl = s => { let t = esc(s); if(st.q){ const r = new RegExp("("+esc(st.q).replace(/[.*+?^${}()|[\]\\]/g,"\\$&")+")","gi"); t = t.replace(r,"<mark>$1</mark>"); } return t; };
+const has = (s) => !st.q || String(s).toLowerCase().includes(st.q.toLowerCase());
 $("total").textContent = DATA.length;
 
 function chips(el, items, isOn, onClick){
   el.innerHTML = ""; items.forEach(([k,label]) => { const b = document.createElement("button"); b.className = "chip"+(isOn(k)?" on":""); b.textContent = label; b.onclick = () => onClick(k); el.appendChild(b); });
 }
 function controls(){
-  chips($("presets"), Object.keys(PRESETS).map(k=>[k,k]), k => false, k => { const p = PRESETS[k]; st.secs = new Set(p.secs); st.limit = p.limit; render(); });
+  chips($("presets"), Object.keys(PRESETS).map(k=>[k,k]), () => false, k => { const p = PRESETS[k]; st.secs = new Set(p.secs); st.limit = p.limit; render(); });
   const n = k => k==="전체" ? DATA.length : DATA.filter(v=>v.kind===k).length;
   chips($("kinds"), ["전체","영상","쇼츠"].map(k=>[k,`${k} ${n(k)}`]), k => st.kind===k, k => { st.kind = k; render(); });
-  chips($("limits"), [[3,"3줄"],[6,"6줄"],[99,"전체"]], k => st.limit===k, k => { st.limit = k; render(); });
+  chips($("limits"), [[5,"5개"],[8,"8개"],[99,"전체"]], k => st.limit===k, k => { st.limit = k; render(); });
   $("secs").innerHTML = SECS.map(s => `<label class="chk"><input type="checkbox" data-s="${s}" ${st.secs.has(s)?"checked":""}> ${s}</label>`).join("");
   $("secs").querySelectorAll("input").forEach(i => i.onchange = () => { i.checked ? st.secs.add(i.dataset.s) : st.secs.delete(i.dataset.s); render(); });
 }
-function rowMatch(t){ return !st.q || t.toLowerCase().includes(st.q.toLowerCase()); }
+const list = (tag, arr) => arr.length ? `<${tag}>${arr.map(x=>`<li>${hl(x)}</li>`).join("")}</${tag}>` : "";
 
 function renderCards(){
   let shown = 0, html = "";
   DATA.forEach((v, vi) => {
     if(st.kind!=="전체" && v.kind!==st.kind) return;
-    const titleHit = rowMatch(v.title);
+    const titleHit = has(v.title);
     let body = "";
-    v.sections.forEach((s, si) => {
-      if(!st.secs.has(s.label) && s.label!=="내용") return;
-      let lines = s.lines.filter(l => titleHit || rowMatch(l));
-      if(!lines.length) return;
-      const key = vi+"-"+si, isBen = s.label==="혜택";
-      const lim = st.expanded.has(key) ? 99 : st.limit;
-      const vis = lines.slice(0, lim);
-      const rows = vis.map((l, li) => {
-        const id = vi+"|"+s.lines.indexOf(l);
-        const txt = l.replace(/^[•\-]\s*/, "");
-        return isBen ? `<label class="row"><input type="checkbox" data-id="${id}" ${st.checked.has(id)?"checked":""}><span>${hl(txt)}</span></label>`
-                     : `<div class="plain">${hl(l)}</div>`;
-      }).join("");
-      const more = lines.length > vis.length ? `<button class="more" data-k="${key}">+ ${lines.length-vis.length}개 더 보기</button>` : "";
-      body += `<div class="sec ${s.label==="유의사항"?"warn":""}"><div class="lb">${s.label}</div>${rows}${more}</div>`;
-    });
-    if(st.secs.has("관련 링크")){
-      const ls = (v.links||[]).filter(l => titleHit || rowMatch(l.label+" "+l.url));
-      if(ls.length) body += `<div class="sec"><div class="lb">관련 링크</div>` + ls.map(l =>
-        `<div class="plain">${hl(l.label||"링크")} <a href="${esc(l.url)}" target="_blank" rel="noopener">${hl(l.url.length>60?l.url.slice(0,60)+"…":l.url)}</a> <span class="src">${esc(l.src)}</span></div>`).join("") + `</div>`;
+    if(st.secs.has("한줄요약") && v.tldr) body += `<div class="tldr">${hl(v.tldr)}</div>`;
+
+    if(st.secs.has("혜택")){
+      let flat = [];
+      v.groups.forEach((g, gi) => g.items.forEach((it, ii) => { if(titleHit || has(g.category+" "+it.name+" "+it.deal+" "+it.detail)) flat.push({g, gi, it, ii}); }));
+      const lim = st.expanded.has(vi) ? 99 : st.limit, vis = flat.slice(0, lim);
+      let lastG = -1;
+      vis.forEach(({g, gi, it, ii}) => {
+        if(gi !== lastG){ const cnt = flat.filter(x=>x.gi===gi).length; body += `<div class="cat">${hl(g.category||"혜택")} <i>${cnt}</i></div>`; lastG = gi; }
+        const id = vi+"|"+gi+"|"+ii;
+        body += `<label class="item"><input type="checkbox" data-id="${id}" ${st.checked.has(id)?"checked":""}><span class="nm">${hl(it.name)}</span><span class="dl">${hl(it.deal)}</span>${it.detail?`<span class="dt">${hl(it.detail)}</span>`:""}</label>`;
+      });
+      if(flat.length > vis.length) body += `<button class="more" data-k="${vi}">+ ${flat.length-vis.length}개 더 보기</button>`;
     }
-    if(st.q && !titleHit && !body) return;
+
+    let boxes = "";
+    const T = v.target.filter(has), H = v.how.filter(has), C = v.caution.filter(has);
+    if(st.secs.has("대상") && T.length) boxes += `<div class="box"><div class="lb">대상</div>${list("ul",T)}</div>`;
+    if(st.secs.has("신청방법") && H.length) boxes += `<div class="box"><div class="lb">신청방법·기간</div>${list("ol",H)}</div>`;
+    if(st.secs.has("유의사항") && C.length) boxes += `<div class="box warn"><div class="lb">⚠ 유의사항</div>${list("ul",C)}</div>`;
+    if(boxes) body += `<div class="boxes">${boxes}</div>`;
+
+    if(st.secs.has("관련 링크")){
+      const ls = (v.links||[]).filter(l => titleHit || has(l.label+" "+l.url));
+      if(ls.length) body += `<div class="links">` + ls.map(l => `<a class="pill" href="${esc(l.url)}" target="_blank" rel="noopener">🔗 ${hl(l.label||new URL(l.url).hostname)} <small>${esc(l.src)}</small></a>`).join("") + `</div>`;
+    }
+    if(st.q && !titleHit && !body.replace(/<[^>]*>/g,"").trim()) return;
     shown++;
     html += `<div class="card ${v.kind==="쇼츠"?"short":""}"><span class="tag">${v.kind}</span><h2><a href="${esc(v.url)}" target="_blank" rel="noopener">${hl(v.title)}</a></h2>${body}</div>`;
   });
   $("cards").innerHTML = html || `<div class="empty">조건에 맞는 항목이 없습니다.</div>`;
   $("count").textContent = `${shown}개 영상 표시 중`;
   $("cards").querySelectorAll("input[data-id]").forEach(i => i.onchange = () => { i.checked ? st.checked.add(i.dataset.id) : st.checked.delete(i.dataset.id); renderOut(); });
-  $("cards").querySelectorAll(".more").forEach(b => b.onclick = () => { st.expanded.add(b.dataset.k); render(); });
+  $("cards").querySelectorAll(".more").forEach(b => b.onclick = () => { st.expanded.add(Number(b.dataset.k)); render(); });
 }
 function renderOut(){
   const by = {};
-  st.checked.forEach(id => { const [vi, li] = id.split("|").map(Number); const ben = DATA[vi].sections.find(s=>s.label==="혜택"); if(ben) (by[vi] = by[vi]||[]).push(ben.lines[li].replace(/^[•\-]\s*/,"")); });
+  st.checked.forEach(id => { const [vi, gi, ii] = id.split("|").map(Number); const it = DATA[vi].groups[gi].items[ii]; (by[vi] = by[vi]||[]).push(`${it.name} — ${it.deal}${it.detail?" ("+it.detail+")":""}`); });
   const t = Object.keys(by).map(vi => `[${DATA[vi].kind}] ${DATA[vi].title}\n${DATA[vi].url}\n`+by[vi].map(x=>"• "+x).join("\n")).join("\n\n");
-  $("out").value = t || "관심 있는 혜택 줄의 체크박스를 누르면 여기에 모입니다.";
+  $("out").value = t || "관심 있는 혜택의 체크박스를 누르면 여기에 모입니다.";
 }
 function render(){ controls(); renderCards(); renderOut(); }
 $("q").oninput = e => { st.q = e.target.value.trim(); renderCards(); };
 $("copy").onclick = () => { navigator.clipboard.writeText($("out").value).then(() => { $("copy").textContent = "복사됨!"; setTimeout(()=>$("copy").textContent="복사",1200); }); };
+if(window.innerWidth <= 820) $("pd").open = false;
 render();
 </script>
 </body>
