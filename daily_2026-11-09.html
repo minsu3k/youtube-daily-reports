@@ -8,7 +8,11 @@
 :root{--bg:#14161a;--panel:#1c1f25;--card:#20242b;--card2:#272c34;--line:#2e333c;--ink:#e8e9ec;--soft:#a3a8b3;--faint:#6f7684;--acc:#4fd1b5;--acc2:#f5b94a;--warn:#f08a6c;--accbg:#4fd1b518}
 *{box-sizing:border-box}
 body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.6 -apple-system,"Segoe UI","Noto Sans KR",sans-serif}
-a{color:var(--acc);text-decoration:none}
+a{color:var(--acc);text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:3px;text-decoration-color:#4fd1b588;transition:background .12s,text-decoration-color .12s}
+a:hover{background:var(--accbg);text-decoration-thickness:2px;text-decoration-color:var(--acc);border-radius:3px}
+.item a.nm{color:var(--ink);font-weight:600;justify-self:start}
+.item a.nm:hover{color:var(--acc)}
+.item a.nm sup{color:var(--acc);font-size:10px;margin-left:3px;text-decoration:none;display:inline-block}
 header{padding:22px 20px 6px;max-width:1180px;margin:0 auto}
 header h1{margin:0;font-size:21px}
 header .sub{color:var(--soft);font-size:13px;margin-top:2px}
@@ -44,7 +48,9 @@ label.chk{display:flex;gap:8px;align-items:center;font-size:14px;color:var(--sof
 .box li{margin:2px 0;overflow-wrap:anywhere}
 .links{margin-top:14px;display:flex;flex-wrap:wrap;gap:6px}
 .pill{display:inline-flex;gap:6px;align-items:center;border:1px solid var(--line);background:var(--card2);border-radius:99px;padding:4px 11px;font-size:13px;color:var(--ink)}
-.pill:hover{border-color:var(--acc)}
+.pill{text-decoration:underline;text-decoration-color:#4fd1b566;text-underline-offset:3px}
+.pill:hover{border-color:var(--acc);background:var(--accbg);text-decoration-color:var(--acc)}
+.pill small{text-decoration:none;display:inline-block}
 .pill small{color:var(--faint);font-size:11px}
 .fold{cursor:pointer;user-select:none}
 .chead{display:flex;align-items:center;gap:6px}
@@ -79,7 +85,7 @@ button.copy{margin-top:8px;background:var(--acc);color:#0c1a17;border:0;border-r
 <section class="out"><h3>✅ 체크한 혜택 모아보기 (카드 안 체크박스를 눌러 담기)</h3>
   <textarea id="out" readonly></textarea><button class="copy" id="copy">복사</button></section>
 <script>
-const DATA = [{"kind": "영상", "title": "5달러 쓰면 5달러 줍니다. 괜찮은데요?", "url": "https://www.youtube.com/watch?v=2w2uQ_FPass", "links": [{"label": "정가거부 네이버 카페", "url": "https://cafe.naver.com/wjdrkrjqn", "src": "설명"}, {"label": "오늘의핫딜", "url": "https://influencers.coupang.com/s/wjdrkrjqn", "src": "설명"}, {"label": "정가거부 유튜브 채널 멤버십을 오픈하였습니다.", "url": "https://www.youtube.com/channel/UC1KHW0JH7zToxC2H69axgzw/join", "src": "설명"}, {"label": "정가거부 이벤트 한눈에 보기", "url": "https://vo.la/rG1nNCZ", "src": "고정댓글"}, {"label": "트래블고", "url": "https://m.hanacard.co.kr/MKMAGAZINEWM.web?url=/MKEVT1010M.web?EVN_SEQ=60608", "src": "고정댓글"}], "tldr": "트래블GO 체크카드로 해외 온라인 가맹점에서 USD 5 이상 결제하면 5달러를 캐시백해 줍니다.", "groups": [{"category": "카드 캐시백", "items": [{"name": "하나카드 트래블GO 체크카드", "deal": "USD 5 이상 결제 시 100% 캐시백", "detail": "건당 USD 5 이상, 1인 1회, 최대 USD 5. 미화환산금액 기준이며 원화 하나머니로 지급"}]}, {"category": "하나Pick 추가 적립", "items": [{"name": "중국 첫 결제 Pick", "deal": "50% 적립 · 최대 5천 하나머니", "detail": "기간 2026.11.02~12.31. 2025년 7월 이후 해외 결제 이력이 없어야 함. 중국 온/오프라인 가맹점"}, {"name": "베트남 첫 결제 · usimsa", "deal": "50% 적립쿠폰 · 30% 할인", "detail": "화면 목록에만 있음. 자막에는 언급 없음. 일본·중국은 '완료'로 표시"}]}, {"category": "사용처 예시", "items": [{"name": "알리익스프레스·아마존·AI 토큰", "deal": "해외 온라인 가맹점 외화 결제", "detail": "알리에서 한국 상품은 원화 결제라 제외. 해외 상품은 USD 결제"}]}], "target": ["하나카드 트래블GO 체크카드 보유자", "카드가 없으면 발급 후 참여 가능(해외 결제 계획이 있을 때만 권장)", "하나Pick 추가 적립: 2025년 7월 이후 해외 결제 이력이 없는 하나 개인 신용·체크카드 고객(하나BC카드 제외)"], "how": ["하나카드 앱(하나Pay)에서 해외 온라인결제 $5 캐시백 이벤트 응모하기", "트래블GO 체크카드 준비(없으면 트래블GO 신청)", "하나Pick에서 해당 국가 첫 결제 혜택을 미리 Pick(선택)", "해외 온라인 가맹점에서 건당 USD 5 이상 외화로 결제", "영수증 상세내역에서 승인요청금액이 USD로 찍혔는지 확인"], "caution": ["원화 결제는 대상 제외이고 외화 결제만 인정", "한국 상품 구매는 원화 결제가 되므로 주의", "캐시백은 1인 1회, 최대 USD 5", "캐시백은 원화 하나머니로 지급", "캐시백 이벤트 기간은 화면에 안 보임. 앱에서 확인 필요", "하나Pick 적립은 일부 조건 글씨가 잘려 보임(2027.1.31 관련 문구 등). 상세 확인 필요", "자막은 적립 한도를 '5'라고만 했고, 화면은 최대 5천 하나머니로 표시", "이벤트는 변경·종료될 수 있고 참여는 개인 판단"]}];
+const DATA = [{"kind": "영상", "title": "5달러 쓰면 5달러 줍니다. 괜찮은데요?", "url": "https://www.youtube.com/watch?v=2w2uQ_FPass", "links": [{"label": "정가거부 네이버 카페", "url": "https://cafe.naver.com/wjdrkrjqn", "src": "설명"}, {"label": "오늘의핫딜", "url": "https://influencers.coupang.com/s/wjdrkrjqn", "src": "설명"}, {"label": "정가거부 유튜브 채널 멤버십을 오픈하였습니다.", "url": "https://www.youtube.com/channel/UC1KHW0JH7zToxC2H69axgzw/join", "src": "설명"}, {"label": "정가거부 이벤트 한눈에 보기", "url": "https://vo.la/rG1nNCZ", "src": "고정댓글"}], "tldr": "트래블GO 체크카드로 해외 온라인 가맹점에서 USD 5 이상 결제하면 5달러를 캐시백해 줍니다.", "groups": [{"category": "카드 캐시백", "items": [{"name": "하나카드 트래블GO 체크카드", "deal": "USD 5 이상 결제 시 100% 캐시백", "detail": "건당 USD 5 이상, 1인 1회, 최대 USD 5. 미화환산금액 기준이며 원화 하나머니로 지급", "link": "https://m.hanacard.co.kr/MKMAGAZINEWM.web?url=/MKEVT1010M.web?EVN_SEQ=60608", "ltitle": "트래블고"}]}, {"category": "하나Pick 추가 적립", "items": [{"name": "중국 첫 결제 Pick", "deal": "50% 적립 · 최대 5천 하나머니", "detail": "기간 2026.11.02~12.31. 2025년 7월 이후 해외 결제 이력이 없어야 함. 중국 온/오프라인 가맹점"}, {"name": "베트남 첫 결제 · usimsa", "deal": "50% 적립쿠폰 · 30% 할인", "detail": "화면 목록에만 있음. 자막에는 언급 없음. 일본·중국은 '완료'로 표시"}]}, {"category": "사용처 예시", "items": [{"name": "알리익스프레스·아마존·AI 토큰", "deal": "해외 온라인 가맹점 외화 결제", "detail": "알리에서 한국 상품은 원화 결제라 제외. 해외 상품은 USD 결제"}]}], "target": ["하나카드 트래블GO 체크카드 보유자", "카드가 없으면 발급 후 참여 가능(해외 결제 계획이 있을 때만 권장)", "하나Pick 추가 적립: 2025년 7월 이후 해외 결제 이력이 없는 하나 개인 신용·체크카드 고객(하나BC카드 제외)"], "how": ["하나카드 앱(하나Pay)에서 해외 온라인결제 $5 캐시백 이벤트 응모하기", "트래블GO 체크카드 준비(없으면 트래블GO 신청)", "하나Pick에서 해당 국가 첫 결제 혜택을 미리 Pick(선택)", "해외 온라인 가맹점에서 건당 USD 5 이상 외화로 결제", "영수증 상세내역에서 승인요청금액이 USD로 찍혔는지 확인"], "caution": ["원화 결제는 대상 제외이고 외화 결제만 인정", "한국 상품 구매는 원화 결제가 되므로 주의", "캐시백은 1인 1회, 최대 USD 5", "캐시백은 원화 하나머니로 지급", "캐시백 이벤트 기간은 화면에 안 보임. 앱에서 확인 필요", "하나Pick 적립은 일부 조건 글씨가 잘려 보임(2027.1.31 관련 문구 등). 상세 확인 필요", "자막은 적립 한도를 '5'라고만 했고, 화면은 최대 5천 하나머니로 표시", "이벤트는 변경·종료될 수 있고 참여는 개인 판단"]}];
 const SECS = ["한줄요약","혜택","대상","신청방법","유의사항","관련 링크"];
 const PRESETS = {
   "기본": {secs:SECS, limit:8},
@@ -135,7 +141,7 @@ function renderCards(){
           if(rendered >= lim){ hidden++; return; }
           rendered++;
           const id = vi+"|"+gi+"|"+ii;
-          body += `<label class="item"><input type="checkbox" data-id="${id}" ${st.checked.has(id)?"checked":""}><span class="nm">${hl(it.name)}</span><span class="dl">${hl(it.deal)}</span>${it.detail?`<span class="dt">${hl(it.detail)}</span>`:""}</label>`;
+          body += `<label class="item"><input type="checkbox" data-id="${id}" ${st.checked.has(id)?"checked":""}>${it.link?`<a class="nm" href="${esc(it.link)}" target="_blank" rel="noopener" title="${esc(it.ltitle||"")}">${hl(it.name)}<sup>↗</sup></a>`:`<span class="nm">${hl(it.name)}</span>`}<span class="dl">${hl(it.deal)}</span>${it.detail?`<span class="dt">${hl(it.detail)}</span>`:""}</label>`;
         });
       });
       if(hidden) body += `<button class="more" data-k="${vi}">+ ${hidden}개 더 보기</button>`;
