@@ -103,14 +103,13 @@ main.in{padding-block:18px 8px}
 .cat{display:flex;align-items:center;gap:8px;margin:14px 0 2px;font-family:var(--display);font-size:16px;font-weight:400}
 .cat i{font-style:normal;font-family:var(--body);font-weight:700;font-size:11.5px;background:var(--tag);color:var(--tag-ink);border-radius:99px;padding:0 8px}
 .cat:hover .car{color:var(--ink)}
-.item{display:grid;grid-template-columns:auto 1fr auto;gap:2px 10px;padding:9px 4px;border-bottom:1px solid var(--line);align-items:start}
-.item input{grid-row:1/3;margin-top:5px;accent-color:var(--ink)}
+.item{display:grid;grid-template-columns:1fr auto;gap:2px 10px;padding:9px 4px;border-bottom:1px solid var(--line);align-items:start}
 .item .nm{font-weight:700;overflow-wrap:anywhere}
 .item a.nm{justify-self:start;color:var(--ink);text-decoration-color:var(--link)}
 .item a.nm:hover{color:var(--link)}
 .item a.nm sup{color:var(--link);font-size:10px;margin-left:3px;display:inline-block;text-decoration:none}
-.item .dl{grid-column:3;grid-row:1;text-align:right;font-weight:800;background:var(--deal-bg);color:var(--deal-ink);border-radius:6px;padding:0 8px;white-space:nowrap;justify-self:end}
-.item .dt{grid-column:2/4;grid-row:2;font-size:13px;color:var(--muted);overflow-wrap:anywhere}
+.item .dl{grid-column:2;grid-row:1;text-align:right;font-weight:800;background:var(--deal-bg);color:var(--deal-ink);border-radius:6px;padding:0 8px;white-space:nowrap;justify-self:end}
+.item .dt{grid-column:1/3;grid-row:2;font-size:13px;color:var(--muted);overflow-wrap:anywhere}
 .boxes{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:10px;margin-top:14px}
 .box{background:var(--surface2);border-radius:10px;padding:10px 13px}
 .box .lb{font-size:12px;font-weight:800;letter-spacing:.03em;color:var(--next);margin-bottom:4px}
@@ -123,11 +122,6 @@ main.in{padding-block:18px 8px}
 .lk small{color:var(--muted);font-size:11px;text-decoration:none;display:inline-block}
 mark{background:#FFD60A66;color:inherit;border-radius:3px}
 .more{background:none;border:0;color:var(--link);cursor:pointer;padding:6px 0;font-size:13px;font-weight:700;text-decoration:underline;text-underline-offset:3px}
-.out{margin-block:8px 28px}
-.out .box2{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:14px}
-.out h3{margin:0 0 8px;font-size:14px}
-textarea{width:100%;min-height:110px;background:var(--surface2);color:var(--ink);border:1px solid var(--line);border-radius:8px;padding:10px;font:13px/1.6 ui-monospace,Consolas,monospace;resize:vertical}
-button.copy{margin-top:8px;background:var(--tag);color:var(--tag-ink);border:0;border-radius:99px;padding:7px 18px;font-weight:800;cursor:pointer}
 .empty{color:var(--muted);padding:30px 0;text-align:center}
 footer{color:var(--muted);font-size:12.5px;padding-block:14px 40px;border-top:1px solid var(--line)}
 </style>
@@ -156,8 +150,6 @@ footer{color:var(--muted);font-size:12.5px;padding-block:14px 40px;border-top:1p
 </div></div>
 
 <main class="in"><p class="count" id="count"></p><div id="cards"></div></main>
-<section class="in out"><div class="box2"><h3>✅ 체크한 혜택 모아보기 <span style="font-weight:400;color:var(--muted)">(카드 안 체크박스를 눌러 담기)</span></h3>
-  <textarea id="out" readonly></textarea><button class="copy" id="copy">복사</button></div></section>
 <footer class="in">혜택은 쇼핑몰·카드사 사정에 따라 일찍 끝나거나 바뀔 수 있어요. 참여 전에 영상과 이벤트 페이지에서 한 번 더 확인해 주세요. 링크는 제작자의 제휴 링크일 수 있습니다.</footer>
 
 <script>
@@ -169,7 +161,7 @@ const PRESETS = {
   "전부 자세히": {secs:SECS, limit:99},
   "신청방법 위주": {secs:["신청방법","유의사항","관련 링크"], limit:99}
 };
-const st = {kind:"전체", status:"전체", q:"", secs:new Set(PRESETS["기본"].secs), limit:8, checked:new Set(), expanded:new Set(), fold:new Set()};
+const st = {kind:"전체", status:"전체", q:"", secs:new Set(PRESETS["기본"].secs), limit:8, expanded:new Set(), fold:new Set()};
 const $ = id => document.getElementById(id);
 const esc = s => String(s).replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
 const hl = s => { let t = esc(s); if(st.q){ const r = new RegExp("("+esc(st.q).replace(/[.*+?^${}()|[\]\\]/g,"\\$&")+")","gi"); t = t.replace(r,"<mark>$1</mark>"); } return t; };
@@ -248,8 +240,7 @@ function renderCards(){
         its.forEach(({it, ii}) => {
           if(rendered >= lim){ hidden++; return; }
           rendered++;
-          const id = vi+"|"+gi+"|"+ii;
-          body += `<label class="item"><input type="checkbox" data-id="${id}" ${st.checked.has(id)?"checked":""}>${it.link?`<a class="nm" href="${esc(it.link)}" target="_blank" rel="noopener" title="${esc(it.ltitle||"")}">${hl(it.name)}<sup>↗</sup></a>`:`<span class="nm">${hl(it.name)}</span>`}<span class="dl">${hl(it.deal)}</span>${it.detail?`<span class="dt">${hl(it.detail)}</span>`:""}</label>`;
+          body += `<div class="item">${it.link?`<a class="nm" href="${esc(it.link)}" target="_blank" rel="noopener" title="${esc(it.ltitle||"")}">${hl(it.name)}<sup>↗</sup></a>`:`<span class="nm">${hl(it.name)}</span>`}<span class="dl">${hl(it.deal)}</span>${it.detail?`<span class="dt">${hl(it.detail)}</span>`:""}</div>`;
         });
       });
       if(hidden) body += `<button class="more" data-k="${vi}">+ ${hidden}개 더 보기</button>`;
@@ -283,19 +274,11 @@ function renderCards(){
   });
   $("cards").innerHTML = html || `<div class="empty">조건에 맞는 항목이 없습니다.</div>`;
   $("count").textContent = `${shown}개 영상 표시 중`;
-  $("cards").querySelectorAll("input[data-id]").forEach(i => i.onchange = () => { i.checked ? st.checked.add(i.dataset.id) : st.checked.delete(i.dataset.id); renderOut(); });
   $("cards").querySelectorAll(".more").forEach(b => b.onclick = () => { st.expanded.add(Number(b.dataset.k)); render(); });
   $("cards").querySelectorAll(".fold").forEach(el => el.onclick = () => { const k = el.dataset.f; st.fold.has(k) ? st.fold.delete(k) : st.fold.add(k); renderCards(); });
 }
-function renderOut(){
-  const by = {};
-  st.checked.forEach(id => { const [vi, gi, ii] = id.split("|").map(Number); const it = DATA[vi].groups[gi].items[ii]; (by[vi] = by[vi]||[]).push(`${it.name} — ${it.deal}${it.detail?" ("+it.detail+")":""}${it.link?"\n  "+it.link:""}`); });
-  const t = Object.keys(by).map(vi => `[${DATA[vi].kind}] ${DATA[vi].title}\n${DATA[vi].url}\n`+by[vi].map(x=>"• "+x).join("\n")).join("\n\n");
-  $("out").value = t || "관심 있는 혜택의 체크박스를 누르면 여기에 모입니다.";
-}
-function render(){ controls(); renderCards(); renderOut(); }
+function render(){ controls(); renderCards(); }
 $("q").oninput = e => { st.q = e.target.value.trim(); renderCards(); };
-$("copy").onclick = () => { navigator.clipboard.writeText($("out").value).then(() => { $("copy").textContent = "복사됨!"; setTimeout(()=>$("copy").textContent="복사",1200); }); };
 render();
 </script>
 </body>
