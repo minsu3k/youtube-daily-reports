@@ -10,6 +10,7 @@
 body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.6 -apple-system,"Segoe UI","Noto Sans KR",sans-serif}
 a{color:var(--acc);text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:3px;text-decoration-color:#4fd1b588;transition:background .12s,text-decoration-color .12s}
 a:hover{background:var(--accbg);text-decoration-thickness:2px;text-decoration-color:var(--acc);border-radius:3px}
+.back{display:inline-block;font-size:13px;margin-bottom:8px}
 .item a.nm{color:var(--ink);font-weight:600;justify-self:start}
 .item a.nm:hover{color:var(--acc)}
 .item a.nm sup{color:var(--acc);font-size:10px;margin-left:3px;text-decoration:none;display:inline-block}
@@ -70,7 +71,7 @@ button.copy{margin-top:8px;background:var(--acc);color:#0c1a17;border:0;border-r
 </style>
 </head>
 <body>
-<header><h1>🎁 정가거부 혜택 리포트</h1><div class="sub">2026-11-10 · 신규 <b id="total"></b>개 · 영상 화면 + 자막을 함께 분석</div></header>
+<header><a class="back" href="./">← 전체 리포트 목록</a><h1>🎁 정가거부 혜택 리포트</h1><div class="sub">2026-11-10 · 신규 <b id="total"></b>개 · 영상 화면 + 자막을 함께 분석</div></header>
 <div class="wrap">
   <aside class="panel"><details id="pd" open><summary>⚙ 필터·보기 설정</summary>
     <h3>프리셋</h3><div class="chips" id="presets"></div>
