@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>정가거부 혜택 2026-11-12</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=IBM+Plex+Sans+KR:wght@400;500;700&display=swap">
+<style>
+:root{
+  --bg:#F4F5F7;--surface:#FFFFFF;--surface2:#F1F3F6;--ink:#14161B;--muted:#5D636E;--line:#E1E4E9;
+  --band:#121418;--band-ink:#F5F6F8;--band-muted:#A3A9B3;
+  --tag:#FFD60A;--tag-ink:#14161B;--hot:#EE3B2B;--cafe:#0B9A4A;
+  --live:#0E8748;--live-bg:#E2F4E9;--soon:#E0321A;--soon-bg:#FDE6E1;--next:#2559C9;--next-bg:#E3EBFB;--done:#858C96;--done-bg:#ECEEF1;
+  --link:#2559C9;--link-bg:#E3EBFB;--deal-bg:#FFF3B8;--deal-ink:#14161B;
+  --display:"Black Han Sans","IBM Plex Sans KR","Apple SD Gothic Neo","Malgun Gothic",sans-serif;
+  --body:"IBM Plex Sans KR","Apple SD Gothic Neo","Malgun Gothic",system-ui,sans-serif;
+}
+@media (prefers-color-scheme:dark){:root{
+  --bg:#0E1014;--surface:#181B21;--surface2:#20242B;--ink:#ECEEF2;--muted:#9AA1AC;--line:#262A32;
+  --band:#08090B;--live:#43C783;--live-bg:#14291D;--soon:#FF5F45;--soon-bg:#35170F;--next:#7AA2FF;--next-bg:#16213A;--done:#737A85;--done-bg:#20242B;
+  --link:#7AA2FF;--link-bg:#16213A;--deal-bg:#3A3208;--deal-ink:#FFD60A;color-scheme:dark}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--body);font-size:15px;line-height:1.55}
+.in{max-width:960px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+button,input{font:inherit;color:inherit}
+:focus-visible{outline:2px solid var(--tag);outline-offset:2px}
+/* 하이퍼링크는 항상 밑줄 + 호버 시 배경 강조 */
+a{color:var(--link);text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:3px;text-decoration-color:color-mix(in srgb,var(--link) 45%,transparent);transition:background .12s,text-decoration-color .12s}
+a:hover{background:var(--link-bg);text-decoration-thickness:2px;text-decoration-color:var(--link);border-radius:3px}
+
+/* 채널 밴드 */
+.band{background:var(--band);color:var(--band-ink)}
+.band .in{padding-block:22px 20px;display:flex;flex-direction:column;gap:14px}
+.kicker{align-self:flex-start;display:inline-flex;align-items:center;gap:8px;font-size:14px;font-weight:700;letter-spacing:.01em}
+.kicker i{width:24px;height:17px;border-radius:5px;background:var(--tag);position:relative;flex:none}
+.kicker i::after{content:"";position:absolute;left:9px;top:4.5px;border-left:7px solid var(--tag-ink);border-top:4px solid transparent;border-bottom:4px solid transparent}
+h1{font-family:var(--display);font-weight:400;font-size:clamp(30px,7vw,44px);line-height:1.08;margin:0;letter-spacing:-.5px}
+h1 em{font-style:normal;color:var(--tag)}
+.sub{margin:0;color:var(--band-muted);font-size:14px}
+.stats{font-size:13px;color:var(--band-muted);font-variant-numeric:tabular-nums}
+.stats b{color:var(--band-ink);font-weight:700}
+.toplinks{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;max-width:760px}
+@media(max-width:640px){.toplinks{grid-template-columns:1fr 1fr}}
+.tl{display:flex;flex-direction:column;gap:4px;min-width:0;background:#fff;color:#14161B;border-radius:12px;padding:12px 14px;text-decoration:none;transition:transform .12s,box-shadow .12s}
+.tl:hover{background:#fff;transform:translateY(-2px);box-shadow:0 6px 18px #0006;text-decoration:none}
+.tl b.t{font-family:var(--display);font-weight:400;font-size:17px;line-height:1.2}
+.tl small{color:#5D636E;font-size:12px}
+.tl .lb{align-self:flex-start;font-size:10.5px;font-weight:800;letter-spacing:.06em;color:#fff;padding:1px 7px;border-radius:4px}
+.tl .lb.hot{background:var(--hot)}.tl .lb.cafe{background:var(--cafe)}.tl .lb.all{background:#14161B}
+
+/* 도구줄 */
+.bar{position:sticky;top:0;z-index:5;background:var(--bg);border-bottom:1px solid var(--line)}
+.bar .in{display:flex;flex-wrap:wrap;gap:8px 10px;align-items:center;padding-block:10px}
+.chips{display:flex;flex-wrap:wrap;gap:6px}
+.gl{font-size:11px;font-weight:800;letter-spacing:.06em;color:var(--muted);margin-right:-4px}
+.pill{border:1px solid var(--line);background:var(--surface);color:var(--muted);padding:5px 12px;border-radius:99px;cursor:pointer;font-size:13px;font-weight:500}
+.pill.on{background:var(--ink);border-color:var(--ink);color:var(--bg);font-weight:700}
+.pill:hover{border-color:var(--ink)}
+input[type=search]{flex:1 1 180px;min-width:0;padding:7px 12px;border-radius:99px;border:1px solid var(--line);background:var(--surface);font-size:14px}
+details.opts{flex:1 0 100%}
+details.opts>summary{cursor:pointer;font-size:13px;font-weight:700;color:var(--muted);list-style:none;display:inline-block}
+details.opts>summary::-webkit-details-marker{display:none}
+.optgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:12px;padding:10px 0 4px}
+.optgrid h3{margin:0 0 6px;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+label.chk{display:flex;gap:8px;align-items:center;font-size:14px;padding:1px 0;cursor:pointer}
+label.chk input{accent-color:var(--ink)}
+
+/* 카드 */
+main.in{padding-block:18px 8px}
+.count{color:var(--muted);font-size:13px;margin:0 0 10px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:14px;margin-bottom:16px}
+.hero{display:grid;grid-template-columns:minmax(0,300px) 1fr;gap:16px}
+@media(max-width:720px){.hero{grid-template-columns:1fr}}
+.thumb{position:relative;display:block;aspect-ratio:16/9;border-radius:10px;overflow:hidden;background:#000;align-self:start}
+.thumb:hover{background:#000;border-radius:10px}
+.thumb img{width:100%;height:100%;object-fit:cover;display:block}
+.thumb::after{content:"";position:absolute;right:8px;bottom:8px;width:26px;height:19px;border-radius:5px;background:#000a}
+.thumb::before{content:"";position:absolute;right:16px;bottom:13.5px;z-index:1;border-left:7px solid #fff;border-top:4px solid transparent;border-bottom:4px solid transparent}
+.meta{min-width:0;display:flex;flex-direction:column;gap:7px}
+.row1{display:flex;flex-wrap:wrap;align-items:center;gap:6px 8px}
+.chip{font-size:12px;font-weight:700;padding:2px 9px;border-radius:99px;line-height:1.5}
+.k-n{background:var(--surface2);color:var(--muted);font-weight:500}
+.s-live{background:var(--live-bg);color:var(--live)}
+.s-soon{background:var(--soon-bg);color:var(--soon)}
+.s-today{background:var(--soon);color:#fff}
+.s-end{background:var(--done-bg);color:var(--done)}
+.dd{background:var(--band);color:#fff;font-family:var(--display);font-weight:400;letter-spacing:.02em}
+.dd.soon{background:var(--soon)}
+.card.ended{opacity:.72}
+.card.ended .meta h2 a{text-decoration-style:dashed}
+.tagt{color:var(--muted);font-size:13px}
+.meta h2{margin:0;font-size:18px;line-height:1.35;font-weight:700}
+.meta h2 a{color:var(--ink);text-decoration-color:color-mix(in srgb,var(--ink) 40%,transparent)}
+.meta h2 a:hover{background:var(--link-bg);color:var(--link)}
+.tldr{margin:0;color:var(--ink);font-size:14.5px}
+.sub2{color:var(--muted);font-size:13px;font-variant-numeric:tabular-nums}
+.tog{align-self:flex-start;margin-top:auto;border:1px solid var(--line);background:var(--surface2);color:var(--muted);border-radius:99px;padding:3px 12px;font-size:12.5px;font-weight:700;cursor:pointer}
+.tog:hover{border-color:var(--ink);color:var(--ink)}
+.detail{border-top:1px solid var(--line);margin-top:14px;padding-top:2px}
+
+.fold{cursor:pointer;user-select:none}
+.car{display:inline-block;width:16px;color:var(--muted);font-size:12px}
+.cat{display:flex;align-items:center;gap:8px;margin:14px 0 2px;font-family:var(--display);font-size:16px;font-weight:400}
+.cat i{font-style:normal;font-family:var(--body);font-weight:700;font-size:11.5px;background:var(--tag);color:var(--tag-ink);border-radius:99px;padding:0 8px}
+.cat:hover .car{color:var(--ink)}
+.item{display:grid;grid-template-columns:1fr auto;gap:2px 10px;padding:9px 4px;border-bottom:1px solid var(--line);align-items:start}
+.item .nm{font-weight:700;overflow-wrap:anywhere}
+.item a.nm{justify-self:start;color:var(--ink);text-decoration-color:var(--link)}
+.item a.nm:hover{color:var(--link)}
+.item a.nm sup{color:var(--link);font-size:10px;margin-left:3px;display:inline-block;text-decoration:none}
+.item .dl{grid-column:2;grid-row:1;text-align:right;font-weight:800;background:var(--deal-bg);color:var(--deal-ink);border-radius:6px;padding:0 8px;white-space:nowrap;justify-self:end}
+.item .dt{grid-column:1/3;grid-row:2;font-size:13px;color:var(--muted);overflow-wrap:anywhere}
+.boxes{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:10px;margin-top:14px}
+.box{background:var(--surface2);border-radius:10px;padding:10px 13px}
+.box .lb{font-size:12px;font-weight:800;letter-spacing:.03em;color:var(--next);margin-bottom:4px}
+.box.how .lb{color:var(--live)}.box.warn .lb{color:var(--soon)}
+.box ul,.box ol{margin:0;padding-left:18px;font-size:13.5px}
+.box li{margin:2px 0;overflow-wrap:anywhere}
+.links{margin-top:14px;display:flex;flex-wrap:wrap;gap:6px}
+.lk{display:inline-flex;gap:6px;align-items:center;border:1px solid var(--line);background:var(--surface);border-radius:99px;padding:4px 11px;font-size:13px}
+.lk:hover{border-color:var(--link)}
+.lk small{color:var(--muted);font-size:11px;text-decoration:none;display:inline-block}
+mark{background:#FFD60A66;color:inherit;border-radius:3px}
+.more{background:none;border:0;color:var(--link);cursor:pointer;padding:6px 0;font-size:13px;font-weight:700;text-decoration:underline;text-underline-offset:3px}
+.empty{color:var(--muted);padding:30px 0;text-align:center}
+footer{color:var(--muted);font-size:12.5px;padding-block:14px 40px;border-top:1px solid var(--line)}
+</style>
+</head>
+<body>
+<div class="band"><div class="in">
+  <div class="kicker"><i></i>정가거부 혜택 리포트</div>
+  <h1>오늘 올라온 <em>혜택</em></h1>
+  <p class="sub">2026-11-12 · 영상 화면 + 자막을 함께 분석했어요</p>
+  <div class="stats" id="stats"></div>
+  <div class="toplinks" id="toplinks"></div>
+</div></div>
+
+<div class="bar"><div class="in">
+  <span class="gl">상태</span><div class="chips" id="stat"></div>
+  <span class="gl">종류</span><div class="chips" id="kinds"></div>
+  <input type="search" id="q" placeholder="업체·상품·키워드 검색">
+  <details class="opts" id="opts"><summary>⚙ 보기 설정 ▾</summary>
+    <div class="optgrid">
+      <div><h3>프리셋</h3><div class="chips" id="presets"></div></div>
+      <div><h3>표시할 항목</h3><div id="secs"></div></div>
+      <div><h3>혜택 개수</h3><div class="chips" id="limits"></div></div>
+      <div><h3>접기</h3><div class="chips" id="folds"></div></div>
+    </div>
+  </details>
+</div></div>
+
+<main class="in"><p class="count" id="count"></p><div id="cards"></div></main>
+<footer class="in">혜택은 쇼핑몰·카드사 사정에 따라 일찍 끝나거나 바뀔 수 있어요. 참여 전에 영상과 이벤트 페이지에서 한 번 더 확인해 주세요. 링크는 제작자의 제휴 링크일 수 있습니다.</footer>
+
+<script>
+const DATA = [{"id": "BJWehVouZ70", "uploaded": "2026-11-11", "kind": "영상", "title": "라면, 소스 오늘 안사면 언제사나요. 이러니까 마트를 안가는구나", "url": "https://www.youtube.com/watch?v=BJWehVouZ70", "links": [{"label": "정가거부 네이버 카페", "url": "https://cafe.naver.com/wjdrkrjqn", "src": "설명"}, {"label": "오늘의핫딜", "url": "https://influencers.coupang.com/s/wjdrkrjqn", "src": "설명"}, {"label": "정가거부 유튜브 채널 멤버십을 오픈하였습니다.", "url": "https://www.youtube.com/channel/UC1KHW0JH7zToxC2H69axgzw/join", "src": "설명"}, {"label": "청정원 토마토 퓨레 570g 1개 (₩4,480)", "url": "https://link.coupang.com/re/AFYOUTUBE?pageKey=9707117871&ctag=9707117871&itemId=29041427583&vendorItemId=95968573177&subparam=YT3-uvqNUXsAvVlKCZCsOV6vyi5bRM-4jYqDsyY9-ChXWJSqf1C4rBocSFte7MrA3N6eEB-R-7Zjrt7jx7czX7T0DCamdOTfHWGfFl6g3A", "src": "상품"}, {"label": "아이깨끗해 핸드워시 순 보송보송 파우더향 250ml 1개 (₩2,260)", "url": "https://link.coupang.com/re/AFYOUTUBE?pageKey=7677840315&ctag=7677840315&itemId=60096&vendorItemId=3000025371&subparam=YT3-FypxTNtnxhR-8SI-WupLLTlCM8_kBULX7F485YUFU65vJwOj9FG_817cLpftQIzKP5dhVUxg0OiCwF2aPR3JHs8_hN1P11BU2qb1Ew", "src": "상품"}, {"label": "너구리 얼큰한맛 120g 5개 (₩4,200)", "url": "https://link.coupang.com/re/AFYOUTUBE?pageKey=2278837&ctag=2278837&itemId=17397518258&vendorItemId=84566976323&subparam=YT3-MYudwUDKP9hqoa1onD5Q1TrlaaLLDp_FNQWXl54kJQ9_3nd2h2Y63Flrr5mmtsE-m2Blq4jNoCI652O3CPWYHaJJHQ92R0Gj2_wE8A", "src": "상품"}, {"label": "케라시스 두피 클리닉 단백질 샴푸 980ml 2개 (₩11,500)", "url": "https://link.coupang.com/re/AFYOUTUBE?pageKey=6523616015&ctag=6523616015&itemId=18038085663&vendorItemId=85192467061&subparam=YT3-oV5ls-7TYYdDADvJZGwkZWi-fYGXN0Ocb-6nXgA9Ye1pW-XnQsJcpkgUvZA57hjjuLgFdrOoMMtiTlOxp5lP-DJWtJKKT56BM2f8ug", "src": "상품"}, {"label": "짜왕 4개 (₩4,480)", "url": "https://link.coupang.com/re/AFYOUTUBE?pageKey=788073&ctag=788073&itemId=3058036&vendorItemId=3000346747&subparam=YT3-pyEWcORNgrb2WCMNPffxF_tZCrsPoDDsyMO9zUYAWRGdadACM2l_ukG6C-l7tRHzt2a2Atd8ZWLA9EZx_JGkTBdc9T56z-T_cENopw", "src": "상품"}], "tldr": "쿠팡 와우쿠폰가로 라면·청정원 소스·생활용품 특가, 아이디당 3개까지", "tag": "쿠팡 라면 특가", "end": "", "groups": [{"category": "소스·식품", "items": [{"name": "청정원 체다치즈소스 230g", "deal": "1,330원 · 정가 4,980원 73%↓", "detail": "와우쿠폰할인가, 일반할인가 2,980원"}, {"name": "청정원 토마토 퓨레 510g", "deal": "1,330원", "detail": "화면 목록은 1,330원, 자막과 일치"}, {"name": "청정원 돈가스 소스 400g", "deal": "1,640원", "detail": "화면 목록에 1640원으로 표기", "link": "https://link.coupang.com/re/AFYOUTUBE?pageKey=7115489070&ctag=7115489070&itemId=8781460117&vendorItemId=3035796391&subparam=YT3-eP8MV9PabE7UfrFQbkL4mr2S_ToBw96QhiyckBww20u-wZdCw0qMjtnPaIDX1_Iagl19w1a4YS6QzPnBaM0pPFzrfFpwrVFQBNVBxw", "ltitle": "청정원 클래식 돈카츠 소스 400g 1개 (₩2,530)"}]}, {"category": "라면·면류", "items": [{"name": "생생우동 4개", "deal": "5,620원 · 28%↓", "detail": "화면 기준 4개 묶음, 1개는 5,100원"}, {"name": "짜파게티 범버 컵라면 6개", "deal": "개당 3,190원 · 38%↓", "detail": "6개 선택 시 쿠폰가, 쿠폰 1인 3개 적용"}, {"name": "불닭볶음면 5개", "deal": "3,070원 · 39%↓", "detail": "화면에 5개 3,070원 표기"}, {"name": "너구리 얼큰한맛", "deal": "3,290원", "detail": "자막 기준, 화면 목록에는 12개 묶음 표기"}, {"name": "신라면 5개", "deal": "2,900원", "detail": "자막 기준, 화면에서 확인 안 됨"}, {"name": "육개장 사발면 6개", "deal": "4,280원", "detail": "화면 목록 4,820원으로 보여 자막과 불일치", "link": "https://link.coupang.com/re/AFYOUTUBE?pageKey=196473&ctag=196473&itemId=188711&vendorItemId=91465675841&subparam=YT3-eXXaOKKvaI4Sw_Su38bYBS14JZGu8wwXHTOp0PwrMSGDRDEx8rInYD48tckm_WIz7LVzVSHk67jclAGdRHfJl-nm1o4HTLyc8xvuWw", "ltitle": "육개장 사발면 86g 6개 (₩5,620)"}, {"name": "안성탕면 5개", "deal": "2,620원", "detail": "자막 기준, 화면에서 확인 안 됨", "link": "https://link.coupang.com/re/AFYOUTUBE?pageKey=7687488315&ctag=7687488315&itemId=20548419769&vendorItemId=83493607733&subparam=YT3-eF3ECQaHKX-4r8AXDC_BKslaqDb1KH4km9SVWbcnHiSr3bRNnzgWdF4FvOrQeeQTeMQ9FCxUlGN_-za4sdz67RMUYIpNywX3-z7LtA", "ltitle": "농심 안성탕면125g(5입)X1개 1개 (₩3,990)"}, {"name": "짜파게티 8개", "deal": "7,740원", "detail": "자막 기준"}, {"name": "앵그리 너구리", "deal": "3,150원", "detail": "화면 목록에는 5개 3,150원으로 표기", "link": "https://link.coupang.com/re/AFYOUTUBE?pageKey=1229027856&ctag=1229027856&itemId=2221833918&vendorItemId=70219519954&subparam=YT3-g-fEZ3hI1q_V3GX7Dc2Vb-P7X0jR8zGdm6ZpE4olXHuaSa45Nc2IZZpOR4NaIVxNFLp89TxwlnztAWt1jsY5U_jHHKEzZ6oi1P7b9g", "ltitle": "농심 앵그리 너구리 121g 5개 (₩4,010)"}]}, {"category": "생활용품", "items": [{"name": "홈스타 착 붙는 락스 스프레이 500ml", "deal": "1,880원 · 44%↓", "detail": "자막은 1,880원을 18,80원으로 잘못 표기", "link": "https://link.coupang.com/re/AFYOUTUBE?pageKey=12731&ctag=12731&itemId=37579&vendorItemId=95428942305&subparam=YT3-Y11fLo3wOKD6aV1xNfyhjAZY0J9hCJuJYce9Ft-uDQ0goOYtskrru1ODPCU89sABd6nexxwMWFwfM5SHiEgnTvUS3OO3KxA0S62IUQ", "ltitle": "홈스타 착 붙는 락스 스프레이 500ml 1개 (₩3,400)"}, {"name": "케라시스 두피 샴푸 980ml", "deal": "3,600원", "detail": "화면 목록 기준"}, {"name": "케라시스 컨디셔너 980ml", "deal": "4,050원 · 72%↓", "detail": "자막은 4원으로 잘못 표기, 화면 4,050원"}, {"name": "주방세제 (순샘 추정)", "deal": "2,030원", "detail": "화면 목록 기준"}, {"name": "섬유유연제 5.7L", "deal": "11,930원", "detail": "카드 할인 적용가, 자막 기준"}]}], "target": ["쿠팡 와우 회원", "라면·소스를 쟁여두려는 사람", "생필품을 저렴하게 사려는 사람"], "how": ["고정 댓글이나 영상 왼쪽 아래 쿠팡 스티커 링크로 접속", "원하는 상품을 와우쿠폰할인가로 확인", "아이디당 쿠폰 3장이라 상품당 최대 3개씩 구매", "섬유유연제는 카드 할인 적용 후 11,930원"], "caution": ["아이디당 쿠폰 3장까지, 3번 넘게 사면 가격이 오름", "쿠폰가는 와우쿠폰할인가로, 와우 회원 조건 확인 필요", "마감일이 명시되지 않아 가격 변동·종료 가능", "화면 배송 안내는 11/12 도착, 가격은 수시 변동", "자막 오인식이 많아 최종 가격은 링크에서 확인", "영상 이벤트는 참여 권유가 아니며 개인 판단으로 참여"]}];
+const SECS = ["혜택","대상","신청방법","유의사항","관련 링크"];
+const PRESETS = {
+  "기본": {secs:SECS, limit:8},
+  "혜택만 빠르게": {secs:["혜택"], limit:5},
+  "전부 자세히": {secs:SECS, limit:99},
+  "신청방법 위주": {secs:["신청방법","유의사항","관련 링크"], limit:99}
+};
+const st = {kind:"전체", status:"전체", q:"", secs:new Set(PRESETS["기본"].secs), limit:8, expanded:new Set(), fold:new Set()};
+const $ = id => document.getElementById(id);
+const esc = s => String(s).replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const hl = s => { let t = esc(s); if(st.q){ const r = new RegExp("("+esc(st.q).replace(/[.*+?^${}()|[\]\\]/g,"\\$&")+")","gi"); t = t.replace(r,"<mark>$1</mark>"); } return t; };
+const has = s => !st.q || String(s).toLowerCase().includes(st.q.toLowerCase());
+const DOW = ["일","월","화","수","목","금","토"];
+const pd = s => new Date(s+"T00:00:00");
+const fmtEnd = s => { const d = pd(s); return `${d.getMonth()+1}.${d.getDate()}(${DOW[d.getDay()]})`; };
+const fmtUp = s => { if(!s) return ""; const d = pd(s), y = d.getFullYear(); return (y===new Date().getFullYear() ? `${d.getMonth()+1}.${d.getDate()}` : `${String(y).slice(2)}.${d.getMonth()+1}.${d.getDate()}`) + " 업로드"; };
+const dleft = s => { const t = new Date(); t.setHours(0,0,0,0); return Math.round((pd(s) - t)/86400000); };
+
+const SOON_DAYS = 3;  // 마감까지 이 일수 이하면 '마감임박'
+// 상단 통계 · 바로가기
+const nItems = v => v.groups.reduce((a,g)=>a+g.items.length,0);
+$("stats").innerHTML = `영상 <b>${DATA.filter(v=>v.kind==="영상").length}</b> · 쇼츠 <b>${DATA.filter(v=>v.kind==="쇼츠").length}</b> · 정리한 혜택 <b>${DATA.reduce((a,v)=>a+nItems(v),0)}</b>개`
+  + (() => { const soon = DATA.filter(v=>stOf(v).soon).length; return soon ? ` · 🔥 마감임박 <b>${soon}</b>` : ""; })();
+(function(){
+  const all = DATA.flatMap(v => v.links||[]);
+  const hot = all.find(l => /influencers\.coupang\.com/.test(l.url)), cafe = all.find(l => /cafe\.naver\.com\/[^\/?#]+\/?$/.test(l.url));
+  const tl = (cls, lb, t, s, href) => `<a class="tl" href="${esc(href)}" ${href==="./"?"":'target="_blank" rel="noopener"'}><span class="lb ${cls}">${lb}</span><b class="t">${t}</b><small>${s}</small></a>`;
+  $("toplinks").innerHTML = (hot?tl("hot","HOT","정가거부 핫딜 모음","눌러주시면 도움이 됩니다",hot.url):"") + (cafe?tl("cafe","CAFE","정가거부 네이버 카페","카페 바로가기",cafe.url):"") + tl("all","ALL","전체 리포트 목록","날짜별로 모아보기","./");
+})();
+
+function chips(el, items, isOn, onClick){
+  el.innerHTML = ""; items.forEach(([k,label]) => { const b = document.createElement("button"); b.className = "pill"+(isOn(k)?" on":""); b.textContent = label; b.onclick = () => onClick(k); el.appendChild(b); });
+}
+function controls(){
+  const n = k => k==="전체" ? DATA.length : DATA.filter(v=>v.kind===k).length;
+  chips($("kinds"), ["전체","영상","쇼츠"].map(k=>[k,`${k} ${n(k)}`]), k => st.kind===k, k => { st.kind = k; render(); });
+  const ns = k => k==="전체" ? DATA.length : DATA.filter(v=>stOf(v).key===k).length;
+  chips($("stat"), ["전체",...STATUSES].map(k=>[k,`${k} ${ns(k)}`]), k => st.status===k, k => { st.status = k; render(); });
+  chips($("presets"), Object.keys(PRESETS).map(k=>[k,k]), () => false, k => { const p = PRESETS[k]; st.secs = new Set(p.secs); st.limit = p.limit; render(); });
+  chips($("limits"), [[5,"5개"],[8,"8개"],[99,"전체"]], k => st.limit===k, k => { st.limit = k; render(); });
+  chips($("folds"), [["all","전체 접기"],["cat","분류만 접기"],["none","전체 펼치기"]], () => false, k => {
+    st.fold.clear();
+    DATA.forEach((v, vi) => { if(k==="all") st.fold.add("c"+vi); if(k==="cat") v.groups.forEach((g, gi) => st.fold.add(`g${vi}-${gi}`)); });
+    renderCards();
+  });
+  $("secs").innerHTML = SECS.map(s => `<label class="chk"><input type="checkbox" data-s="${s}" ${st.secs.has(s)?"checked":""}> ${s}</label>`).join("");
+  $("secs").querySelectorAll("input").forEach(i => i.onchange = () => { i.checked ? st.secs.add(i.dataset.s) : st.secs.delete(i.dataset.s); render(); });
+}
+const list = (tag, arr) => `<${tag}>${arr.map(x=>`<li>${hl(x)}</li>`).join("")}</${tag}>`;
+
+// 상태: 마감일(end) 기준으로 '보는 시점'의 오늘 날짜와 비교해 계산 (마감일 없으면 '진행 중')
+function stOf(v){
+  if(!v.end) return {key:"진행 중", cls:"s-live", dd:""};
+  const d = dleft(v.end);
+  if(d < 0) return {key:"마감", cls:"s-end", dd:""};
+  if(d === 0) return {key:"오늘 마감", cls:"s-today", dd:"D-DAY", soon:true};
+  if(d <= SOON_DAYS) return {key:"마감임박", cls:"s-soon", dd:"D-"+d, soon:true};
+  return {key:"진행 중", cls:"s-live", dd:"D-"+d};
+}
+const STATUSES = ["진행 중","마감임박","오늘 마감","마감"];
+function stChips(v){
+  const s = stOf(v);
+  return `<span class="chip ${s.cls}">${s.key}</span>${s.dd?`<span class="chip dd ${s.soon?"soon":""}">${s.dd}</span>`:""}`;
+}
+
+function renderCards(){
+  let shown = 0, html = "";
+  DATA.forEach((v, vi) => {
+    if(st.kind!=="전체" && v.kind!==st.kind) return;
+    if(st.status!=="전체" && stOf(v).key!==st.status) return;
+    const titleHit = has(v.title+" "+(v.tag||"")+" "+(v.tldr||""));
+    let body = "";
+    let benCount = 0;
+    if(st.secs.has("혜택")){
+      const lim = st.expanded.has(vi) ? 99 : st.limit;
+      let rendered = 0, hidden = 0;
+      v.groups.forEach((g, gi) => {
+        const its = g.items.map((it, ii) => ({it, ii})).filter(x => titleHit || has(g.category+" "+x.it.name+" "+x.it.deal+" "+x.it.detail));
+        if(!its.length) return;
+        benCount += its.length;
+        const fk = `g${vi}-${gi}`, gf = st.fold.has(fk);
+        body += `<div class="cat fold" data-f="${fk}"><span class="car">${gf?"▸":"▾"}</span>${hl(g.category||"혜택")} <i>${its.length}</i></div>`;
+        if(gf) return;
+        its.forEach(({it, ii}) => {
+          if(rendered >= lim){ hidden++; return; }
+          rendered++;
+          body += `<div class="item">${it.link?`<a class="nm" href="${esc(it.link)}" target="_blank" rel="noopener" title="${esc(it.ltitle||"")}">${hl(it.name)}<sup>↗</sup></a>`:`<span class="nm">${hl(it.name)}</span>`}<span class="dl">${hl(it.deal)}</span>${it.detail?`<span class="dt">${hl(it.detail)}</span>`:""}</div>`;
+        });
+      });
+      if(hidden) body += `<button class="more" data-k="${vi}">+ ${hidden}개 더 보기</button>`;
+    }
+    let boxes = "";
+    const T = (v.target||[]).filter(has), H = (v.how||[]).filter(has), C = (v.caution||[]).filter(has);
+    const box = (key, label, cls, tag, arr) => { const f = st.fold.has(key); return `<div class="box ${cls}"><div class="lb fold" data-f="${key}"><span class="car">${f?"▸":"▾"}</span>${label}</div>${f?"":list(tag,arr)}</div>`; };
+    if(st.secs.has("대상") && T.length) boxes += box(`b${vi}-t`, "대상", "", "ul", T);
+    if(st.secs.has("신청방법") && H.length) boxes += box(`b${vi}-h`, "신청방법·기간", "how", "ol", H);
+    if(st.secs.has("유의사항") && C.length) boxes += box(`b${vi}-c`, "⚠ 유의사항", "warn", "ul", C);
+    if(boxes) body += `<div class="boxes">${boxes}</div>`;
+    if(st.secs.has("관련 링크")){
+      const ls = (v.links||[]).filter(l => titleHit || has(l.label+" "+l.url));
+      if(ls.length) body += `<div class="links">` + ls.map(l => `<a class="lk" href="${esc(l.url)}" target="_blank" rel="noopener">🔗 ${hl(l.label||new URL(l.url).hostname)} <small>${esc(l.src)}</small></a>`).join("") + `</div>`;
+    }
+    if(st.q && !titleHit && !body.replace(/<[^>]*>/g,"").trim()) return;
+    shown++;
+    const cf = st.fold.has("c"+vi), total = nItems(v);
+    const stv = stOf(v);
+    const endTxt = !v.end ? "종료일 미정" : (stv.key==="마감" ? `${fmtEnd(v.end)} 마감` : `~${fmtEnd(v.end)}까지`);
+    const metaBits = [fmtUp(v.uploaded), total?`혜택 ${total}개`:"", endTxt].filter(Boolean).join(" · ");
+    html += `<article class="card ${stv.key==="마감"?"ended":""}"><div class="hero">
+      <a class="thumb" href="${esc(v.url)}" target="_blank" rel="noopener" aria-label="영상 보기"><img loading="lazy" alt="" src="https://i.ytimg.com/vi/${v.id}/maxresdefault.jpg" onerror="this.onerror=null;this.src='https://i.ytimg.com/vi/${v.id}/mqdefault.jpg'"></a>
+      <div class="meta">
+        <div class="row1">${stChips(v)}<span class="chip k-n">${v.kind}</span>${v.tag?`<span class="tagt">${hl(v.tag)}</span>`:""}</div>
+        <h2><a href="${esc(v.url)}" target="_blank" rel="noopener">${hl(v.title)}</a></h2>
+        ${v.tldr?`<p class="tldr">${hl(v.tldr)}</p>`:""}
+        <div class="sub2">${metaBits}</div>
+        <button class="tog fold" data-f="c${vi}">${cf?"▾ 상세 펼치기":"▴ 상세 접기"}</button>
+      </div></div>${cf?"":`<div class="detail">${body}</div>`}</article>`;
+  });
+  $("cards").innerHTML = html || `<div class="empty">조건에 맞는 항목이 없습니다.</div>`;
+  $("count").textContent = `${shown}개 영상 표시 중`;
+  $("cards").querySelectorAll(".more").forEach(b => b.onclick = () => { st.expanded.add(Number(b.dataset.k)); render(); });
+  $("cards").querySelectorAll(".fold").forEach(el => el.onclick = () => { const k = el.dataset.f; st.fold.has(k) ? st.fold.delete(k) : st.fold.add(k); renderCards(); });
+}
+function render(){ controls(); renderCards(); }
+$("q").oninput = e => { st.q = e.target.value.trim(); renderCards(); };
+render();
+</script>
+</body>
+</html>
